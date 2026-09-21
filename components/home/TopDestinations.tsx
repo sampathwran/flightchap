@@ -1,11 +1,11 @@
 "use client";
-import { useTranslation } from "@/lib/i18n";
+
 
 import { useEffect, useState, useRef } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../../lib/firebase';
 
-import { trackEvent } from "@/lib/analytics";
+
 
 export default function TopDestinations() {
   
