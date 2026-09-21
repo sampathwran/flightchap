@@ -50,7 +50,7 @@ export default function HeroSearch() {
       {tabs.map((tab, idx) => (
         <div 
           key={tab.id}
-          className={bsolute inset-0 transition-opacity duration-1000 ease-in-out }
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeTab === idx ? 'opacity-100 z-0' : 'opacity-0 -z-10'}`}
         >
           <img src={tab.image} alt={tab.label} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/50"></div> 
@@ -78,7 +78,11 @@ export default function HeroSearch() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(idx)}
-                  className={lex items-center gap-2 px-4 md:px-6 py-3 rounded-lg font-semibold transition-all whitespace-nowrap text-sm md:text-base }
+                  className={`flex items-center gap-2 px-4 md:px-6 py-3 rounded-lg font-semibold transition-all whitespace-nowrap text-sm md:text-base ${
+                    activeTab === idx 
+                      ? 'bg-blue-600 text-white shadow-lg' 
+                      : 'text-slate-200 hover:text-white hover:bg-slate-700/50'
+                  }`}
                 >
                   <TabIcon className="h-4 w-4 md:h-5 md:w-5" />
                   {tab.label}
@@ -259,8 +263,10 @@ export default function HeroSearch() {
             <button
               key={idx}
               onClick={() => handleTabClick(idx)}
-              className={h-2.5 rounded-full transition-all duration-300 }
-              aria-label={Go to slide }
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeTab === idx ? 'bg-blue-500 w-8' : 'bg-white/50 hover:bg-white w-2.5'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
         </div>
