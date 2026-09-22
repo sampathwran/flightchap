@@ -74,12 +74,24 @@
   },
   "RecentViews": {
     "recentSearches": "Recent Searches",
-    "viewAgain": "View again"
+    "viewAgain": "View again",
+    "title": "Your Recent Searches"
   },
   "TopDestinations": {
     "title": "Top Destinations for You",
     "subtitle": "Explore popular spots",
-    "flightsFrom": "Flights from"
+    "flightsFrom": "Flights from",
+    "subtitleExtended": "Explore the world's top countries and vibrant cities.",
+    "tabCountries": "Countries",
+    "tabCities": "Cities",
+    "reviews": "reviews",
+    "showLess": "[ Show Less ]",
+    "readMore": "[ Read More... ]",
+    "bestTime": "Best time:",
+    "startingFrom": "Starting from",
+    "perNight": "/ night",
+    "findFlights": "Find Flights",
+    "topAttractions": "Top Attractions"
   },
   "FlashDeals": {
     "title": "Flash Flight Deals",
@@ -93,7 +105,16 @@
   },
   "FaqSection": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Common queries"
+    "subtitle": "Common queries",
+    "description": "Got questions? We've got answers.",
+    "q1": "How do I find the cheapest flights?",
+    "a1": "We compare prices from hundreds of airlines and travel agencies in real-time. Simply enter your destination and dates in the search box, and we'll show you the cheapest available options. You can also check our 'Flash Deals' section for limited-time offers.",
+    "q2": "Are there any hidden fees when booking?",
+    "a2": "No, FlightChap is completely free to use. The prices you see on our search results are exactly what the airlines or travel agents charge. We don't add any hidden fees or booking charges.",
+    "q3": "Can I change or cancel my flight?",
+    "a3": "Flight changes and cancellations depend entirely on the airline or travel agency you booked with and the type of ticket you purchased. You will need to contact them directly using the details provided in your booking confirmation email.",
+    "q4": "How do Flash Deals work?",
+    "a4": "Flash Deals are specially curated, highly discounted flight routes that are available for a very limited time. They are often updated daily and represent significant savings over regular fares."
   },
   "Footer": {
     "aboutUs": "About Us",

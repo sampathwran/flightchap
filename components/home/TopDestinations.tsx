@@ -96,7 +96,7 @@ export default function TopDestinations() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12 gap-4">
           <div className="text-center md:text-left">
             <h2 className="text-xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2">{"Top Destinations"}</h2>
-            <p className="text-xs md:text-sm text-gray-500 font-medium">{"Explore the world's top countries and vibrant cities."}</p>
+            <p className="text-xs md:text-sm text-gray-500 font-medium">{"{t('subtitleExtended')}"}</p>
           </div>
           
           {/* Custom Tabs */}
@@ -188,7 +188,7 @@ export default function TopDestinations() {
                           <span className="text-yellow-500 mr-1">⭐</span> {city.rating}
                         </div>
                         <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-white">
-                          {city.reviews} reviews
+                          {city.reviews} {t('reviews')}
                         </div>
                       </div>
 
@@ -218,7 +218,7 @@ export default function TopDestinations() {
                               onClick={() => toggleExpand(city.id)}
                               className="text-[#673AB7] text-xs font-bold mt-1 hover:underline focus:outline-none self-start"
                             >
-                              {expandedCities.has(city.id) ? '[ Show Less ]' : '[ Read More... ]'}
+                              {expandedCities.has(city.id) ? t('showLess') : t('readMore')}
                             </button>
                           )}
                         </div>
@@ -227,12 +227,12 @@ export default function TopDestinations() {
                         <div className="bg-gray-50 rounded-lg p-2.5 mb-3 flex flex-col gap-1.5 shrink-0">
                           {city.bestTime && (
                             <div className="flex items-center text-xs text-gray-600 font-medium">
-                              <span className="mr-2 text-sm">🗓️</span> Best time: {city.bestTime}
+                              <span className="mr-2 text-sm">🗓️</span> {t('bestTime')} {city.bestTime}
                             </div>
                           )}
                           {city.startingPrice && (
                             <div className="flex items-center text-xs text-gray-600 font-medium">
-                              <span className="mr-2 text-sm">💰</span> Starting from <span className="font-bold text-gray-900 ml-1">${city.startingPrice} / night</span>
+                              <span className="mr-2 text-sm">💰</span> {t('startingFrom')} <span className="font-bold text-gray-900 ml-1">${city.startingPrice} {t('perNight')}</span>
                             </div>
                           )}
                         </div>
@@ -243,12 +243,12 @@ export default function TopDestinations() {
                             onClick={() => handleCityClick(city.name)}
                             className="w-full py-2.5 bg-[#673AB7]/10 hover:bg-[#673AB7] text-[#673AB7] hover:text-white font-bold rounded-xl transition-all duration-300 flex justify-center items-center gap-2"
                           >
-                            Find Flights
+                            {t('findFlights')}
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                           </button>
 
                           <a href="/attractions" className="w-full py-1 text-gray-500 hover:text-[#673AB7] text-sm font-bold flex justify-center items-center gap-2 transition-colors">
-                            <span className="text-lg">🎡</span> Top Attractions
+                            <span className="text-lg">🎡</span> {t('topAttractions')}
                           </a>
                         </div>
                       </div>

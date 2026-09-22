@@ -7,22 +7,10 @@ export default function FaqSection() {
   const t = useTranslations('FaqSection');
 
   const faqs = [
-    {
-      question: "How do I find the cheapest flights?",
-      answer: "We compare prices from hundreds of airlines and travel agencies in real-time. Simply enter your destination and dates in the search box, and we'll show you the cheapest available options. You can also check our 'Flash Deals' section for limited-time offers."
-    },
-    {
-      question: "Are there any hidden fees when booking?",
-      answer: "No, FlightChap is completely free to use. The prices you see on our search results are exactly what the airlines or travel agents charge. We don&apos;t add any hidden fees or booking charges."
-    },
-    {
-      question: "Can I change or cancel my flight?",
-      answer: "Flight changes and cancellations depend entirely on the airline or travel agency you booked with and the type of ticket you purchased. You will need to contact them directly using the details provided in your booking confirmation email."
-    },
-    {
-      question: "How do Flash Deals work?",
-      answer: "Flash Deals are specially curated, highly discounted flight routes that are available for a very limited time. They are often updated daily and represent significant savings over regular fares."
-    }
+    { question: t('q1'), answer: t('a1') },
+    { question: t('q2'), answer: t('a2') },
+    { question: t('q3'), answer: t('a3') },
+    { question: t('q4'), answer: t('a4') }
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -32,7 +20,7 @@ export default function FaqSection() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('title')}</h2>
-          <p className="text-slate-600">Got questions? We've got answers.</p>
+          <p className="text-slate-600">{t('description')}</p>
         </div>
 
         <div className="space-y-4">

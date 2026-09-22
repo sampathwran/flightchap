@@ -17,7 +17,7 @@ export default function RecentViews() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
           <PlaneTakeoff className="h-5 w-5 text-blue-600" />
-          Your Recent Searches
+          {t('title')}
         </h2>
 
         <div className="flex overflow-x-auto pb-4 gap-4 hide-scrollbar">
