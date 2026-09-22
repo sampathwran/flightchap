@@ -1,8 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function FaqSection() {
+  const t = useTranslations('FaqSection');
+
   const faqs = [
     {
       question: "How do I find the cheapest flights?",
@@ -28,7 +31,7 @@ export default function FaqSection() {
     <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('title')}</h2>
           <p className="text-slate-600">Got questions? We've got answers.</p>
         </div>
 

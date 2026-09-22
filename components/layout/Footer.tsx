@@ -1,7 +1,9 @@
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Plane } from 'lucide-react'; 
 
 export default function Footer() {
+  const t = useTranslations('Footer');
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -37,8 +39,8 @@ export default function Footer() {
               <li><Link href="/help-center" className="hover:text-blue-400 transition">Help Center</Link></li>
               <li><Link href="/about" className="hover:text-blue-400 transition">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-blue-400 transition">Contact Us</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-blue-400 transition">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-blue-400 transition">{t('privacyPolicy')}</Link></li>
+              <li><Link href="/terms" className="hover:text-blue-400 transition">{t('termsOfService')}</Link></li>
               <li><Link href="/cookie-policy" className="hover:text-blue-400 transition">Cookie Policy</Link></li>
             </ul>
           </div>

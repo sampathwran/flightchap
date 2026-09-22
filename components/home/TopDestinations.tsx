@@ -4,10 +4,13 @@
 import { useEffect, useState, useRef } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../../lib/firebase';
+import { useTranslations } from 'next-intl';
 
 
 
 export default function TopDestinations() {
+  const t = useTranslations('TopDestinations');
+
   
   
   

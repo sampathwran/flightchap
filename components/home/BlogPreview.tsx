@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
+import { useTranslations } from 'next-intl';
 
 interface BlogPost {
   id: string;
@@ -15,6 +16,8 @@ interface BlogPost {
 }
 
 export default function BlogPreview() {
+  const t = useTranslations('BlogPreview');
+
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 

@@ -4,6 +4,7 @@ import { Clock, Plane, Car, Wifi, MoveRight } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
+import { useTranslations } from 'next-intl';
 
 interface Deal {
   id: string;
@@ -20,6 +21,8 @@ interface Deal {
 }
 
 export default function FlashDeals() {
+  const t = useTranslations('FlashDeals');
+
   const [deals, setDeals] = useState<Deal[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('All');

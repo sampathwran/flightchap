@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Search, MapPin, Calendar, Users, Plane, Bus, Car, Smartphone, Globe, Signal, Clock } from 'lucide-react';
 
@@ -38,6 +39,7 @@ const tabs = [
 ];
 
 export default function HeroSearch() {
+  const t = useTranslations('HeroSearch');
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index: number) => {

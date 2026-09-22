@@ -1,7 +1,10 @@
 import { ArrowRight, PlaneTakeoff } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function RecentViews() {
+  const t = useTranslations('RecentViews');
+
   // In a real app, this would come from localStorage or API
   const recentSearches = [
     { id: 1, from: 'Colombo (CMB)', to: 'London (LHR)', date: 'Oct 15 - Oct 22', type: 'Round-trip' },
