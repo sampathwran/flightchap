@@ -121,6 +121,21 @@
     "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "description": "Your ultimate travel companion for comparing and booking the best flight deals, rentals, and e-SIMs worldwide.",
+    "topDestinations": "Top Destinations",
+    "flightsNewYork": "Flights to New York",
+    "flightsLondon": "Flights to London",
+    "flightsDubai": "Flights to Dubai",
+    "flightsTokyo": "Flights to Tokyo",
+    "flightsParis": "Flights to Paris",
+    "company": "Company",
+    "helpCenter": "Help Center",
+    "contactUs": "Contact Us",
+    "cookiePolicy": "Cookie Policy",
+    "subscribeTitle": "Subscribe to unlock secret deals!",
+    "subscribeDesc": "Get member-only prices and travel inspiration sent straight to your inbox.",
+    "placeholderEmail": "Enter your email address",
+    "btnSubscribe": "Subscribe"
   }
 }

@@ -95,8 +95,8 @@ export default function TopDestinations() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12 gap-4">
           <div className="text-center md:text-left">
-            <h2 className="text-xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2">{"Top Destinations"}</h2>
-            <p className="text-xs md:text-sm text-gray-500 font-medium">{"{t('subtitleExtended')}"}</p>
+            <h2 className="text-xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2">{t('title')}</h2>
+            <p className="text-xs md:text-sm text-gray-500 font-medium">{t('subtitleExtended')}</p>
           </div>
           
           {/* Custom Tabs */}
