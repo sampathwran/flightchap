@@ -1,46 +1,46 @@
-'use client';
+"use client";
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Search, MapPin, Calendar, Users, Plane, Bus, Car, Smartphone, Globe, Signal, Clock } from 'lucide-react';
 
-const tabs = [
-  { 
-    id: 'flights', 
-    label: 'Flights', 
-    icon: Plane,
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80',
-    title: 'Find Your Next Adventure',
-    subtitle: 'Compare cheap flights from hundreds of airlines worldwide.'
-  },
-  { 
-    id: 'rental', 
-    label: 'Car & Bike Rental', 
-    icon: Car,
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80',
-    title: 'Hit the Road on Your Terms',
-    subtitle: 'Rent cars and bikes at the best prices for your journey.'
-  },
-  { 
-    id: 'transfers', 
-    label: 'Transfers', 
-    icon: Bus,
-    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80',
-    title: 'Hassle-Free Airport Transfers',
-    subtitle: 'Book reliable taxis and shuttles to and from the airport.'
-  },
-  { 
-    id: 'esim', 
-    label: 'e-SIM', 
-    icon: Smartphone,
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1920&q=80',
-    title: 'Stay Connected Everywhere',
-    subtitle: 'Get instant internet access with our travel e-SIM packages.'
-  }
-];
-
 export default function HeroSearch() {
   const t = useTranslations('HeroSearch');
   const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    { 
+      id: 'flights', 
+      label: t('tabFlights'), 
+      icon: Plane,
+      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80',
+      title: t('tabFlightsTitle'),
+      subtitle: t('tabFlightsSubtitle')
+    },
+    { 
+      id: 'rental', 
+      label: t('tabRental'), 
+      icon: Car,
+      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80',
+      title: t('tabRentalTitle'),
+      subtitle: t('tabRentalSubtitle')
+    },
+    { 
+      id: 'transfers', 
+      label: t('tabTransfers'), 
+      icon: Bus,
+      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80',
+      title: t('tabTransfersTitle'),
+      subtitle: t('tabTransfersSubtitle')
+    },
+    { 
+      id: 'esim', 
+      label: t('tabEsim'), 
+      icon: Smartphone,
+      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1920&q=80',
+      title: t('tabEsimTitle'),
+      subtitle: t('tabEsimSubtitle')
+    }
+  ];
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -101,37 +101,37 @@ export default function HeroSearch() {
           {activeTab === 0 && (
             <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">From</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelFrom')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="City or Airport" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderCityAirport')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">To</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelTo')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="City or Airport" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderCityAirport')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Dates</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDates')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Depart - Return" className="w-full outline-none bg-transparent text-sm font-medium" />
+                  <input type="text" placeholder={t('placeholderDepartReturn')} className="w-full outline-none bg-transparent text-sm font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Passengers</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPassengers')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Users className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" value="1 Adult, Economy" readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" />
+                  <input type="text" readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" value={t('opt1AdultEconomy')} />
                 </div>
               </div>
               <div className="flex items-end">
-                <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
+                <button type="button" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
                   <Search className="h-5 w-5" />
-                  Search Flights
+                  {t('btnSearchFlights')}
                 </button>
               </div>
             </form>
@@ -141,35 +141,35 @@ export default function HeroSearch() {
           {activeTab === 1 && (
             <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
               <div className="relative lg:col-span-2">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Pick-up Location</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPickUp')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="City, Airport, or Address" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderCityAddress')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Dates</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDates')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Pick-up - Drop-off" className="w-full outline-none bg-transparent text-sm font-medium" />
+                  <input type="text" placeholder={t('placeholderPickUpDropOff')} className="w-full outline-none bg-transparent text-sm font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Vehicle</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelVehicle')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Car className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
                   <select className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium text-slate-700">
-                    <option>Any Vehicle</option>
-                    <option>Economy Car</option>
-                    <option>SUV</option>
-                    <option>Motorbike</option>
+                    <option>{t('optAnyVehicle')}</option>
+                    <option>{t('optEconomyCar')}</option>
+                    <option>{t('optSUV')}</option>
+                    <option>{t('optMotorbike')}</option>
                   </select>
                 </div>
               </div>
               <div className="flex items-end">
                 <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
                   <Search className="h-5 w-5" />
-                  Find Vehicles
+                  {t('btnFindVehicles')}
                 </button>
               </div>
             </form>
@@ -179,37 +179,37 @@ export default function HeroSearch() {
           {activeTab === 2 && (
             <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Pick-up</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPickUp')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Airport or Hotel" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderAirportHotel')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Drop-off</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDropOff')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Hotel or Address" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderHotelAddress')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Date & Time</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDateTime')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Pick-up Time" className="w-full outline-none bg-transparent text-sm font-medium" />
+                  <input type="text" placeholder={t('placeholderPickUpTime')} className="w-full outline-none bg-transparent text-sm font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Passengers</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPassengers')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Users className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" value="2 Passengers" readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" />
+                  <input type="text" value={t('opt2Passengers')} readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" />
                 </div>
               </div>
               <div className="flex items-end">
                 <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
                   <Search className="h-5 w-5" />
-                  Search Transfers
+                  {t('btnSearchTransfers')}
                 </button>
               </div>
             </form>
@@ -219,39 +219,39 @@ export default function HeroSearch() {
           {activeTab === 3 && (
             <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
               <div className="relative lg:col-span-2">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Destination</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDestination')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Globe className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder="Where are you traveling to?" className="w-full outline-none bg-transparent font-medium" />
+                  <input type="text" placeholder={t('placeholderWhereTo')} className="w-full outline-none bg-transparent font-medium" />
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Duration</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDuration')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Clock className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
                   <select className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium text-slate-700">
-                    <option>7 Days</option>
-                    <option>15 Days</option>
-                    <option>30 Days</option>
+                    <option>{t('opt7Days')}</option>
+                    <option>{t('opt15Days')}</option>
+                    <option>{t('opt30Days')}</option>
                   </select>
                 </div>
               </div>
               <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Data Package</label>
+                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDataPackage')}</label>
                 <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
                   <Signal className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
                   <select className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium text-slate-700">
-                    <option>3 GB</option>
-                    <option>5 GB</option>
-                    <option>10 GB</option>
-                    <option>Unlimited</option>
+                    <option>{t('opt3GB')}</option>
+                    <option>{t('opt5GB')}</option>
+                    <option>{t('opt10GB')}</option>
+                    <option>{t('optUnlimited')}</option>
                   </select>
                 </div>
               </div>
               <div className="flex items-end">
                 <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
                   <Search className="h-5 w-5" />
-                  Find e-SIMs
+                  {t('btnFindEsims')}
                 </button>
               </div>
             </form>
