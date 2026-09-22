@@ -1,11 +1,11 @@
+"use client";
 import { Plane, User, Menu, Globe, Headphones, Briefcase } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
-import { useLocale } from 'next-intl';
 
 export default function Navbar() {
-  const t = require('next-intl').useTranslations('Navbar');
-  const locale = require('next-intl').useLocale();
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -29,7 +29,6 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center drop-shadow-md font-medium text-sm lg:text-base">
             <Link href="/" className="hover:text-blue-200 transition">{t('home')}</Link>
-            
             
             <div className="flex items-center gap-1 hover:text-blue-200 transition">
               <Globe className="h-4 w-4" />
@@ -56,25 +55,50 @@ export default function Navbar() {
               </select>
             </div>
 
-
             <Link href="/support" className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Headphones className="h-4 w-4" />{t('support')}</Link>
-
-            <Link href="/my-booking" className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Briefcase className="h-4 w-4" />
-              My Booking
+              <Headphones className="h-4 w-4" />
+              {t('support')}
             </Link>
             
-            <button className="flex items-center gap-2 bg-white text-slate-900 px-5 py-2.5 rounded-full font-bold hover:bg-slate-100 transition shadow-lg">
-              <User className="h-5 w-5" />{t('signIn')}</button>
+            <Link href="/bookings" className="flex items-center gap-1 hover:text-blue-200 transition">
+              <Briefcase className="h-4 w-4" />
+              {t('myBookings')}
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button className="text-white hover:text-blue-200 focus:outline-none drop-shadow-md">
-              <Menu className="h-7 w-7" />
+          {/* User Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <button className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-full backdrop-blur-sm transition font-medium text-sm drop-shadow-sm">
+              <User className="h-4 w-4" />
+              {t('signIn')}
             </button>
           </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button className="text-white hover:text-blue-200 transition p-2">
+              <Menu className="h-6 w-6 drop-shadow-md" />
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile Menu (Hidden by default for this template) */}
+      <div className="hidden md:hidden bg-white text-slate-800">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+          <Link href="/" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('home')}</Link>
+          <Link href="/support" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('support')}</Link>
+          <Link href="/bookings" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('myBookings')}</Link>
+        </div>
+        <div className="pt-4 pb-4 border-t border-slate-200 px-5 flex flex-col gap-4">
+           <div className="flex items-center gap-2">
+             <Globe className="h-5 w-5 text-slate-500" />
+             <span className="font-medium text-lg text-slate-800">Language: {locale.toUpperCase()}</span>
+           </div>
+           <button className="w-full flex justify-center items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 px-5 py-3 rounded-xl transition font-semibold text-lg shadow-md">
+            <User className="h-5 w-5" />
+            {t('signIn')}
+          </button>
         </div>
       </div>
     </nav>
