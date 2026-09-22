@@ -55,10 +55,7 @@ export default function Navbar() {
               </select>
             </div>
 
-            <Link href="/support" className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Headphones className="h-4 w-4" />
-              {t('support')}
-            </Link>
+            {/* Support link hidden for now */}
             
             <Link href="/bookings" className="flex items-center gap-1 hover:text-blue-200 transition">
               <Briefcase className="h-4 w-4" />
@@ -87,7 +84,7 @@ export default function Navbar() {
       <div className="hidden md:hidden bg-white text-slate-800">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
           <Link href="/" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('home')}</Link>
-          <Link href="/support" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('support')}</Link>
+          {/* Support link hidden */}
           <Link href="/bookings" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('myBookings')}</Link>
         </div>
         <div className="pt-4 pb-4 border-t border-slate-200 px-5 flex flex-col gap-4">

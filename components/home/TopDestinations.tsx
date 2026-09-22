@@ -58,8 +58,8 @@ export default function TopDestinations() {
     const fetchData = async () => {
       try {
         const [countriesSnap, citiesSnap] = await Promise.all([
-          getDocs(query(collection(db, "countries"), where('target_website', '==', 'flightchap'))),
-          getDocs(query(collection(db, "cities"), where('target_website', '==', 'flightchap')))
+          getDocs(collection(db, "countries")),
+          getDocs(collection(db, "cities"))
         ]);
         
         const countriesData = countriesSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));

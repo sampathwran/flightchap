@@ -36,9 +36,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">{t('company')}</h3>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><Link href="/help-center" className="hover:text-blue-400 transition">{t('helpCenter')}</Link></li>
+              {/* <li><Link href="/help-center" className="hover:text-blue-400 transition">{t('helpCenter')}</Link></li> */}
               <li><Link href="/about" className="hover:text-blue-400 transition">{t('aboutUs')}</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition">{t('contactUs')}</Link></li>
+              {/* <li><Link href="/contact" className="hover:text-blue-400 transition">{t('contactUs')}</Link></li> */}
               <li><Link href="/privacy-policy" className="hover:text-blue-400 transition">{t('privacyPolicy')}</Link></li>
               <li><Link href="/terms" className="hover:text-blue-400 transition">{t('termsOfService')}</Link></li>
               <li><Link href="/cookie-policy" className="hover:text-blue-400 transition">{t('cookiePolicy')}</Link></li>
