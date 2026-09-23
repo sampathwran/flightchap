@@ -31,6 +31,20 @@ const RentalWidget = () => {
   return <div ref={containerRef} className="w-full bg-white rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center transition-opacity duration-500" />;
 };
 
+const TransferWidget = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.innerHTML = '';
+    const script = document.createElement('script');
+    script.src = 'https://tpwidg.com/content?trs=575255&shmarker=769308&locale=en&header=Airport%20transfers%20executed%20by%20local%20Professional%20companies&powered_by=true&color_scheme=bg&b_counter=true&b_benefit=true&b_descr=true&b_about=true&b_map=true&b_reviews=true&b_breadcrumbs=true&b_poweredby=true&b_numbers=true&b_trustpilot=true&b_assortment=true&b_reliable=true&b_extended=true&b_how=true&b_faq=true&b_why=true&b_easybook=true&campaign_id=22&promo_id=1504';
+    script.async = true;
+    script.charset = 'utf-8';
+    containerRef.current.appendChild(script);
+  }, []);
+  return <div ref={containerRef} className="w-full bg-white rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center transition-opacity duration-500" />;
+};
+
 export default function HeroSearch() {
   const t = useTranslations('HeroSearch');
   const [activeTab, setActiveTab] = useState(0);
@@ -131,45 +145,8 @@ export default function HeroSearch() {
           {/* RENTAL WIDGET */}
           {activeTab === 1 && <RentalWidget />}
 
-          {/* TRANSFERS FORM */}
-          {activeTab === 2 && (
-            <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPickUp')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderAirportHotel')} className="w-full outline-none bg-transparent font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDropOff')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderHotelAddress')} className="w-full outline-none bg-transparent font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDateTime')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderPickUpTime')} className="w-full outline-none bg-transparent text-sm font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPassengers')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Users className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" value={t('opt2Passengers')} readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" />
-                </div>
-              </div>
-              <div className="flex items-end">
-                <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
-                  <Search className="h-5 w-5" />
-                  {t('btnSearchTransfers')}
-                </button>
-              </div>
-            </form>
-          )}
+          {/* TRANSFERS WIDGET */}
+          {activeTab === 2 && <TransferWidget />}
 
           {/* e-SIM FORM */}
           {activeTab === 3 && (
