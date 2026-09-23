@@ -1,6 +1,6 @@
 ﻿'use client';
 import { useEffect, useState } from 'react';
-import { Clock, Plane, Car, Wifi, MoveRight } from 'lucide-react';
+import { Clock, Plane, Car, Wifi, MoveRight, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, where, getDocs, doc, setDoc, deleteDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
@@ -172,6 +172,9 @@ export default function FlashDeals() {
              return (
               <a href={deal.targetUrl} target="_blank" rel="noopener noreferrer" key={deal.id} className="group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
                 <div className="relative h-48 overflow-hidden shrink-0">
+                  <button onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-20 hover:scale-110">
+                    <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
+                  </button>
                   {deal.imageUrl ? (
                     <img 
                       src={deal.imageUrl} 

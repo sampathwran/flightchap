@@ -117,6 +117,9 @@ export default function MemberDeals() {
           {deals.map(deal => (
             <div key={deal.id} className="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition group flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
+                  <button onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 left-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-20 hover:scale-110">
+                    <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
+                  </button>
                 <img src={deal.imageUrl} alt={deal.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
                 <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   {deal.discount}
