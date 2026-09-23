@@ -1,7 +1,21 @@
-"use client";
+﻿"use client";
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Search, MapPin, Calendar, Users, Plane, Bus, Car, Smartphone, Globe, Signal, Clock } from 'lucide-react';
+
+const FlightWidget = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.innerHTML = '';
+    const script = document.createElement('script');
+    script.src = 'https://tpwidg.com/content?currency=usd&trs=575255&shmarker=769308&powered_by=true&locale=en&show_header=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478';
+    script.async = true;
+    script.charset = 'utf-8';
+    containerRef.current.appendChild(script);
+  }, []);
+  return <div ref={containerRef} className="w-full bg-white rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center transition-opacity duration-500" />;
+};
 
 export default function HeroSearch() {
   const t = useTranslations('HeroSearch');
@@ -97,45 +111,8 @@ export default function HeroSearch() {
         {/* Search Form Box */}
         <div className="bg-white rounded-xl shadow-2xl p-4 md:p-6 max-w-5xl mx-auto text-slate-800 min-h-[120px]">
           
-          {/* FLIGHTS FORM */}
-          {activeTab === 0 && (
-            <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelFrom')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderCityAirport')} className="w-full outline-none bg-transparent font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelTo')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderCityAirport')} className="w-full outline-none bg-transparent font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDates')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderDepartReturn')} className="w-full outline-none bg-transparent text-sm font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPassengers')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Users className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" readOnly className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium" value={t('opt1AdultEconomy')} />
-                </div>
-              </div>
-              <div className="flex items-end">
-                <button type="button" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
-                  <Search className="h-5 w-5" />
-                  {t('btnSearchFlights')}
-                </button>
-              </div>
-            </form>
-          )}
+          {/* FLIGHTS WIDGET */}
+          {activeTab === 0 && <FlightWidget />}
 
           {/* RENTAL FORM */}
           {activeTab === 1 && (
