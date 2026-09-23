@@ -46,6 +46,7 @@ export default function FlashDeals() {
 
   const toggleSaveDeal = async (e: React.MouseEvent, deal: any) => {
     e.preventDefault();
+    e.stopPropagation();
     if (!user) {
       router.push('/login');
       return;
@@ -170,7 +171,7 @@ export default function FlashDeals() {
              const isExpired = deal.endTime < new Date();
              
              return (
-              <a href={deal.targetUrl} target="_blank" rel="noopener noreferrer" key={deal.id} className="group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+              <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
                 <div className="relative h-48 overflow-hidden shrink-0">
                   <button onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-20 hover:scale-110">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
@@ -227,7 +228,7 @@ export default function FlashDeals() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             );
           }) : (
             <div className="col-span-full py-12 text-center text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-200">

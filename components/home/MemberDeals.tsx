@@ -33,6 +33,7 @@ export default function MemberDeals() {
 
   const toggleSaveDeal = async (e: React.MouseEvent, deal: any) => {
     e.preventDefault();
+    e.stopPropagation();
     if (!user) {
       router.push('/login');
       return;
