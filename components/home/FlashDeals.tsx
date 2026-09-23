@@ -33,10 +33,7 @@ export default function FlashDeals() {
   useEffect(() => {
     async function fetchDeals() {
       try {
-        const q = query(
-          collection(db, 'flash_deals'),
-          where('target_website', '==', 'flightchap')
-        );
+        const q = query(collection(db, 'flash_deals'));
         const querySnapshot = await getDocs(q);
         let fetchedDeals: Deal[] = [];
         querySnapshot.forEach((doc) => {
