@@ -17,6 +17,20 @@ const FlightWidget = () => {
   return <div ref={containerRef} className="w-full bg-white rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center transition-opacity duration-500" />;
 };
 
+const RentalWidget = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.innerHTML = '';
+    const script = document.createElement('script');
+    script.src = 'https://tpwidg.com/content?trs=575255&shmarker=769308&locale=en&powered_by=true&border_radius=0&plain=true&color_background=%23ffffff&color_button=%2300A991&promo_id=5472&campaign_id=57';
+    script.async = true;
+    script.charset = 'utf-8';
+    containerRef.current.appendChild(script);
+  }, []);
+  return <div ref={containerRef} className="w-full bg-white rounded-xl overflow-hidden min-h-[150px] flex items-center justify-center transition-opacity duration-500" />;
+};
+
 export default function HeroSearch() {
   const t = useTranslations('HeroSearch');
   const [activeTab, setActiveTab] = useState(0);
@@ -114,43 +128,8 @@ export default function HeroSearch() {
           {/* FLIGHTS WIDGET */}
           {activeTab === 0 && <FlightWidget />}
 
-          {/* RENTAL FORM */}
-          {activeTab === 1 && (
-            <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 transition-opacity duration-500">
-              <div className="relative lg:col-span-2">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelPickUp')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <MapPin className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderCityAddress')} className="w-full outline-none bg-transparent font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelDates')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Calendar className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <input type="text" placeholder={t('placeholderPickUpDropOff')} className="w-full outline-none bg-transparent text-sm font-medium" />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">{t('labelVehicle')}</label>
-                <div className="flex items-center border border-slate-300 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500">
-                  <Car className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-                  <select className="w-full outline-none bg-transparent text-sm cursor-pointer font-medium text-slate-700">
-                    <option>{t('optAnyVehicle')}</option>
-                    <option>{t('optEconomyCar')}</option>
-                    <option>{t('optSUV')}</option>
-                    <option>{t('optMotorbike')}</option>
-                  </select>
-                </div>
-              </div>
-              <div className="flex items-end">
-                <button type="button" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center gap-2">
-                  <Search className="h-5 w-5" />
-                  {t('btnFindVehicles')}
-                </button>
-              </div>
-            </form>
-          )}
+          {/* RENTAL WIDGET */}
+          {activeTab === 1 && <RentalWidget />}
 
           {/* TRANSFERS FORM */}
           {activeTab === 2 && (
