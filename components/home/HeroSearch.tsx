@@ -37,7 +37,7 @@ const TransferWidget = () => {
     if (!containerRef.current) return;
     containerRef.current.innerHTML = '';
     const script = document.createElement('script');
-    script.src = 'https://tpwidg.com/content?trs=575255&shmarker=769308&locale=en&header=Airport%20transfers%20executed%20by%20local%20Professional%20companies&powered_by=true&color_scheme=bg&b_counter=true&b_benefit=true&b_descr=true&b_about=true&b_map=true&b_reviews=true&b_breadcrumbs=true&b_poweredby=true&b_numbers=true&b_trustpilot=true&b_assortment=true&b_reliable=true&b_extended=true&b_how=true&b_faq=true&b_why=true&b_easybook=true&campaign_id=22&promo_id=1504';
+    script.src = 'https://tpwidg.com/content?trs=575255&shmarker=769308&locale=en&powered_by=true&border_radius=5&plain=true&color_background=%23f6f6f6&color_button=%23209432&promo_id=4674&campaign_id=22';
     script.async = true;
     script.charset = 'utf-8';
     containerRef.current.appendChild(script);
