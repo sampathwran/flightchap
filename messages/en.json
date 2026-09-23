@@ -94,14 +94,21 @@
     "topAttractions": "Top Attractions"
   },
   "FlashDeals": {
-    "title": "Flash Flight Deals",
-    "endsIn": "Ends in",
-    "bookNow": "Book Now"
+    "title": "⚡ Flash Deals",
+    "subtitle": "Grab these exclusive deals before they're gone!",
+    "viewAll": "View All Deals →",
+    "viewAllMobile": "View All Deals",
+    "bookNow": "Book Now",
+    "expired": "Expired",
+    "endingSoon": "Ending Soon",
+    "checkDeal": "Check Deal",
+    "noDeals": "No active flash deals found for "
   },
   "BlogPreview": {
-    "title": "Travel Inspiration",
-    "subtitle": "Read our latest guides",
-    "readMore": "Read more"
+    "title": "Latest Travel Tips",
+    "subtitle": "Read our latest articles and travel guides.",
+    "viewAll": "View All Articles →",
+    "readMore": "Read More"
   },
   "FaqSection": {
     "title": "Frequently Asked Questions",

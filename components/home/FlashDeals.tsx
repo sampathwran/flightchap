@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect, useState } from 'react';
 import { Clock, Plane, Car, Wifi, MoveRight } from 'lucide-react';
 import Link from 'next/link';
@@ -100,11 +100,11 @@ export default function FlashDeals() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">⚡ Flash Deals</h2>
-            <p className="text-slate-600">Grab these exclusive deals before they&apos;re gone!</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">{t('title')}</h2>
+            <p className="text-slate-600">{t('subtitle')}</p>
           </div>
           <Link href="/deals" className="text-blue-600 font-semibold hover:underline hidden sm:block">
-            View All Deals &rarr;
+            {t('viewAll')}
           </Link>
         </div>
 
@@ -177,7 +177,7 @@ export default function FlashDeals() {
                       {deal.originalPrice && (
                         <span className="text-xs text-slate-400 line-through block">{deal.originalPrice}</span>
                       )}
-                      <span className="text-xl font-bold text-blue-600">{deal.price || 'Check Deal'}</span>
+                      <span className="text-xl font-bold text-blue-600">{deal.price || t('checkDeal')}</span>
                     </div>
                     <div className="bg-slate-900 text-white text-xs font-bold px-3 py-2 rounded-md group-hover:bg-blue-600 transition-colors">
                       Book Now
@@ -188,7 +188,7 @@ export default function FlashDeals() {
             );
           }) : (
             <div className="col-span-full py-12 text-center text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-200">
-              No active flash deals found for {activeTab}.
+              {t('noDeals')} {activeTab}.
             </div>
           )}
         </div>
@@ -196,7 +196,7 @@ export default function FlashDeals() {
         {filteredDeals.length > 0 && (
           <div className="mt-8 text-center sm:hidden">
             <Link href="/deals" className="inline-block border border-blue-600 text-blue-600 font-semibold px-6 py-2 rounded-full hover:bg-blue-50 transition">
-              View All Deals
+              {t('viewAllMobile')}
             </Link>
           </div>
         )}

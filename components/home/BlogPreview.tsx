@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -91,8 +91,8 @@ export default function BlogPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Latest Travel Tips</h2>
-            <p className="text-slate-600">Read our latest articles and travel guides.</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">{t('title')}</h2>
+            <p className="text-slate-600">{t('subtitle')}</p>
           </div>
           <Link href="/blog" className="text-blue-600 font-semibold hover:underline hidden sm:flex items-center gap-1">
             Read all posts <ArrowRight className="h-4 w-4" />
@@ -119,7 +119,7 @@ export default function BlogPreview() {
                   {post.excerpt}
                 </p>
                 <Link href={`/blog/${post.id}`} className="text-blue-600 font-medium hover:underline text-sm mt-auto inline-block">
-                  Read more &rarr;
+                  {t('readMore')} &rarr;
                 </Link>
               </div>
             </div>
