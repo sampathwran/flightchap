@@ -9,7 +9,7 @@ const FlightWidget = () => {
     if (!containerRef.current) return;
     containerRef.current.innerHTML = '';
     const script = document.createElement('script');
-    script.src = 'https://tpwidg.com/content?currency=usd&trs=575255&shmarker=769308&powered_by=true&locale=en&show_header=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478';
+    script.src = 'https://tpwidg.com/content?currency=usd&trs=575255&shmarker=769308&locale=en&stops=any&show_hotels=true&powered_by=true&border_radius=0&plain=true&color_button=%2300A991&color_button_text=%23ffffff&promo_id=3414&campaign_id=111';
     script.async = true;
     script.charset = 'utf-8';
     containerRef.current.appendChild(script);
