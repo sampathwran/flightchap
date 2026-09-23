@@ -173,10 +173,10 @@ export default function FlashDeals() {
              return (
               <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
                 <div className="relative h-48 overflow-hidden shrink-0">
-                  <button onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-20 hover:scale-110">
+                  <div role="button" onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
-                  </button>
-                  {deal.imageUrl ? (
+                  </div>
+                    {deal.imageUrl ? (
                     <img 
                       src={deal.imageUrl} 
                       alt={deal.title}
