@@ -1,9 +1,11 @@
-"use client";
-import { Plane, User, Menu, Globe, Headphones, Briefcase } from 'lucide-react';
+﻿"use client";
+import { Plane, User, Menu, Globe, Headphones, Briefcase, X } from 'lucide-react';
+import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('Navbar');
   const locale = useLocale();
   const router = useRouter();
