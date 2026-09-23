@@ -47,23 +47,30 @@ export default function FlashDeals() {
   const toggleSaveDeal = async (e: React.MouseEvent, deal: any) => {
     e.preventDefault();
     e.stopPropagation();
+    
     if (!user) {
+      alert("Please login first!");
       router.push('/login');
       return;
     }
     
-    const dealRef = doc(db, `users/${user.uid}/saved_deals`, deal.id);
-    if (savedDealIds.has(deal.id)) {
-      await deleteDoc(dealRef);
-    } else {
-      await setDoc(dealRef, {
-        dealId: deal.id,
-        title: deal.title,
-        discount: deal.discount,
-        imageUrl: deal.imageUrl,
-        targetUrl: deal.targetUrl,
-        savedAt: new Date().toISOString()
-      });
+    try {
+      const dealRef = doc(db, `users/${user.uid}/saved_deals`, deal.id);
+      if (savedDealIds.has(deal.id)) {
+        await deleteDoc(dealRef);
+      } else {
+        await setDoc(dealRef, {
+          dealId: deal.id,
+          title: deal.title || '',
+          discount: deal.discount || deal.discountBadge || '',
+          imageUrl: deal.imageUrl || '',
+          targetUrl: deal.targetUrl || '',
+          savedAt: new Date().toISOString()
+        });
+      }
+    } catch (error: any) {
+      alert("Database error: " + error.message);
+      console.error(error);
     }
   };
   const [activeTab, setActiveTab] = useState('All');
@@ -173,7 +180,7 @@ export default function FlashDeals() {
              return (
               <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
                 <div className="relative h-48 overflow-hidden shrink-0">
-                  <div role="button" onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
+                  <div role="button" tabIndex={0} onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
                   </div>
                     {deal.imageUrl ? (

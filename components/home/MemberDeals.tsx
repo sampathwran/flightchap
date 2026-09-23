@@ -34,23 +34,30 @@ export default function MemberDeals() {
   const toggleSaveDeal = async (e: React.MouseEvent, deal: any) => {
     e.preventDefault();
     e.stopPropagation();
+    
     if (!user) {
+      alert("Please login first!");
       router.push('/login');
       return;
     }
     
-    const dealRef = doc(db, `users/${user.uid}/saved_deals`, deal.id);
-    if (savedDealIds.has(deal.id)) {
-      await deleteDoc(dealRef);
-    } else {
-      await setDoc(dealRef, {
-        dealId: deal.id,
-        title: deal.title,
-        discount: deal.discount,
-        imageUrl: deal.imageUrl,
-        targetUrl: deal.targetUrl,
-        savedAt: new Date().toISOString()
-      });
+    try {
+      const dealRef = doc(db, `users/${user.uid}/saved_deals`, deal.id);
+      if (savedDealIds.has(deal.id)) {
+        await deleteDoc(dealRef);
+      } else {
+        await setDoc(dealRef, {
+          dealId: deal.id,
+          title: deal.title || '',
+          discount: deal.discount || deal.discountBadge || '',
+          imageUrl: deal.imageUrl || '',
+          targetUrl: deal.targetUrl || '',
+          savedAt: new Date().toISOString()
+        });
+      }
+    } catch (error: any) {
+      alert("Database error: " + error.message);
+      console.error(error);
     }
   };
 
@@ -118,7 +125,7 @@ export default function MemberDeals() {
           {deals.map(deal => (
             <div key={deal.id} className="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition group flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
-                  <div role="button" onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 left-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
+                  <div role="button" tabIndex={0} onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 left-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
                   </div>
                   <img src={deal.imageUrl} alt={deal.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
