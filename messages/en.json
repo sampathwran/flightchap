@@ -184,5 +184,20 @@
     "btnUnlock": "Unlock Deal",
     "btnSignIn": "Sign in to Book",
     "signUpToUnlock": "Sign up to unlock all"
+  },
+  "Profile": {
+    "title": "My Account",
+    "tabProfile": "Profile Settings",
+    "tabSaved": "Saved Deals",
+    "tabAlerts": "Fare Alerts",
+    "tabPromos": "VIP Promo Codes",
+    "logout": "Log Out",
+    "savedTitle": "Your Saved Deals",
+    "savedSubtitle": "Deals you've bookmarked for later.",
+    "alertsTitle": "Price Drop Alerts",
+    "alertsSubtitle": "We will notify you when prices drop for these routes.",
+    "promosTitle": "Exclusive Promo Codes",
+    "promosSubtitle": "Use these codes at checkout on our partner sites.",
+    "btnCopy": "Copy Code"
   }
 }

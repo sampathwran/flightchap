@@ -69,12 +69,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             {user ? (
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-sm font-medium drop-shadow-md">
+                <Link href="/profile" className="flex items-center gap-2 text-sm font-medium drop-shadow-md hover:opacity-80 transition cursor-pointer">
                   <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center border-2 border-white/50 overflow-hidden">
                     {user.photoURL ? <img src={user.photoURL} alt="User" className="w-full h-full object-cover" /> : <User className="h-4 w-4" />}
                   </div>
                   <span className="hidden lg:block text-white">{user.displayName || user.email?.split('@')[0]}</span>
-                </div>
+                </Link>
                 <button onClick={logout} className="text-xs bg-red-500/80 hover:bg-red-600 text-white px-3 py-1.5 rounded-full transition font-medium shadow-sm">Logout</button>
               </div>
             ) : (
