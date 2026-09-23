@@ -1,6 +1,7 @@
 ﻿"use client";
 import { Plane, User, Menu, Globe, Headphones, Briefcase, X } from 'lucide-react';
 import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 
@@ -9,6 +10,7 @@ export default function Navbar() {
   const t = useTranslations('Navbar');
   const locale = useLocale();
   const router = useRouter();
+  const { user, logout } = useAuth();
   const pathname = usePathname();
 
   const switchLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -67,10 +69,22 @@ export default function Navbar() {
 
           {/* User Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-full backdrop-blur-sm transition font-medium text-sm drop-shadow-sm">
-              <User className="h-4 w-4" />
-              {t('signIn')}
-            </button>
+            {user ? (
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-sm font-medium drop-shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center border-2 border-white/50 overflow-hidden">
+                    {user.photoURL ? <img src={user.photoURL} alt="User" className="w-full h-full object-cover" /> : <User className="h-4 w-4" />}
+                  </div>
+                  <span className="hidden lg:block text-white">{user.displayName || user.email?.split('@')[0]}</span>
+                </div>
+                <button onClick={logout} className="text-xs bg-red-500/80 hover:bg-red-600 text-white px-3 py-1.5 rounded-full transition font-medium shadow-sm">Logout</button>
+              </div>
+            ) : (
+              <Link href="/login" className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-full backdrop-blur-sm transition font-medium text-sm drop-shadow-sm text-white">
+                <User className="h-4 w-4" />
+                {t('signIn')}
+              </Link>
+            )}
           </div>
 
           {/* Mobile menu button */}
