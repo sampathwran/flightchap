@@ -3,7 +3,9 @@
     "home": "Home",
     "support": "Support",
     "myBookings": "My Bookings",
-    "signIn": "Sign In"
+    "signIn": "Sign In",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
   },
   "HeroSearch": {
     "whereTo": "Where to?",

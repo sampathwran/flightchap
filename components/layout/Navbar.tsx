@@ -61,10 +61,8 @@ export default function Navbar() {
 
             {/* Support link hidden for now */}
             
-            <Link href="/bookings" className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Briefcase className="h-4 w-4" />
-              {t('myBookings')}
-            </Link>
+            <Link href="/about" className="hover:text-blue-200 transition">{t('aboutUs')}</Link>
+              <Link href="/contact" className="hover:text-blue-200 transition">{t('contactUs')}</Link>
           </div>
 
           {/* User Actions */}
@@ -101,7 +99,8 @@ export default function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
           <Link href="/" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('home')}</Link>
           {/* Support link hidden */}
-          <Link href="/bookings" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('myBookings')}</Link>
+          <Link href="/about" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('aboutUs')}</Link>
+          <Link href="/contact" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('contactUs')}</Link>
         </div>
         <div className="pt-4 pb-4 border-t border-slate-200 px-5 flex flex-col gap-4">
            <div className="flex items-center gap-2">
