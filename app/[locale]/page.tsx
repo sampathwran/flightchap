@@ -1,7 +1,8 @@
-import HeroSearch from '@/components/home/HeroSearch';
+﻿import HeroSearch from '@/components/home/HeroSearch';
 import RecentViews from '@/components/home/RecentViews';
 import TopDestinations from '@/components/home/TopDestinations';
 import FlashDeals from '@/components/home/FlashDeals';
+import MemberDeals from '@/components/home/MemberDeals';
 import BlogPreview from '@/components/home/BlogPreview';
 import FaqSection from '@/components/home/FaqSection';
 
@@ -12,6 +13,7 @@ export default function Home() {
       <RecentViews />
       <TopDestinations />
       <FlashDeals />
+      <MemberDeals />
       <BlogPreview />
       <FaqSection />
     </>
