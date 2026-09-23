@@ -3,46 +3,55 @@
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
 import { Lock, Star, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
+import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 export default function MemberDeals() {
   const { user } = useAuth();
   const router = useRouter();
+  const t = useTranslations('MemberDeals');
+  
+  const [deals, setDeals] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const deals = [
-    {
-      id: 1,
-      title: "Secret Bali Villa Getaway",
-      discount: "40% OFF",
-      description: "Exclusive rate for members on premium beachfront villas in Seminyak. Includes free breakfast.",
-      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
-      targetUrl: "https://www.agoda.com"
-    },
-    {
-      id: 2,
-      title: "Priority Airport Lounge Access",
-      discount: "Buy 1 Get 1",
-      description: "VIP lounge access worldwide. Members only special offer for long layovers.",
-      image: "https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?auto=format&fit=crop&w=600&q=80",
-      targetUrl: "https://www.prioritypass.com"
-    },
-    {
-      id: 3,
-      title: "First Class Flight Upgrades",
-      discount: "Save up to $500",
-      description: "Unlock hidden upgrade inventory on major international routes with our partner airlines.",
-      image: "https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=600&q=80",
-      targetUrl: "https://www.emirates.com"
-    }
-  ];
+  useEffect(() => {
+    const q = query(
+      collection(db, 'member_deals'),
+      orderBy('createdAt', 'desc')
+    );
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const dealsData = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setDeals(dealsData);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleBookNow = (e: React.MouseEvent, targetUrl: string) => {
     e.preventDefault();
     if (!user) {
       router.push('/login');
     } else {
-      window.open(targetUrl, '_blank');
+      window.open(targetUrl || '#', '_blank');
     }
   };
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-slate-900 text-white relative overflow-hidden my-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">Loading Member Deals...</div>
+      </section>
+    );
+  }
+
+  if (deals.length === 0) return null;
 
   return (
     <section className="py-16 bg-slate-900 text-white relative overflow-hidden my-8">
@@ -54,15 +63,15 @@ export default function MemberDeals() {
           <div>
             <div className="flex items-center gap-2 mb-2 text-orange-400 font-semibold tracking-wider text-sm uppercase">
               <Star className="h-4 w-4 fill-current" />
-              Members VIP Club
+              {t('vipClub')}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold">Exclusive Member Discounts</h2>
-            <p className="text-slate-400 mt-2 max-w-2xl">Unlock premium travel deals and secret rates available only to our registered members.</p>
+            <h2 className="text-3xl md:text-4xl font-bold">{t('title')}</h2>
+            <p className="text-slate-400 mt-2 max-w-2xl">{t('subtitle')}</p>
           </div>
           {!user && (
             <button onClick={() => router.push('/login')} className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full transition font-medium border border-white/10">
               <Lock className="h-4 w-4" />
-              Sign up to unlock all
+              {t('signUpToUnlock')}
             </button>
           )}
         </div>
@@ -71,7 +80,7 @@ export default function MemberDeals() {
           {deals.map(deal => (
             <div key={deal.id} className="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition group flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
-                <img src={deal.image} alt={deal.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+                <img src={deal.imageUrl} alt={deal.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
                 <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   {deal.discount}
                 </div>
@@ -95,9 +104,9 @@ export default function MemberDeals() {
                   }`}
                 >
                   {user ? (
-                    <>Unlock Deal <ArrowRight className="h-4 w-4" /></>
+                    <>{t('btnUnlock')} <ArrowRight className="h-4 w-4" /></>
                   ) : (
-                    <><Lock className="h-4 w-4" /> Sign in to Book</>
+                    <><Lock className="h-4 w-4" /> {t('btnSignIn')}</>
                   )}
                 </button>
               </div>
