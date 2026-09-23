@@ -15,7 +15,7 @@ export default function MemberDeals() {
       discount: "40% OFF",
       description: "Exclusive rate for members on premium beachfront villas in Seminyak. Includes free breakfast.",
       image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
-      targetUrl: "https://www.agoda.com" // Placeholder
+      targetUrl: "https://www.agoda.com"
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export default function MemberDeals() {
     {
       id: 3,
       title: "First Class Flight Upgrades",
-      discount: "Save up to ",
+      discount: "Save up to $500",
       description: "Unlock hidden upgrade inventory on major international routes with our partner airlines.",
       image: "https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=600&q=80",
       targetUrl: "https://www.emirates.com"
@@ -88,7 +88,11 @@ export default function MemberDeals() {
                 <p className="text-slate-400 text-sm mb-6 flex-grow">{deal.description}</p>
                 <button 
                   onClick={(e) => handleBookNow(e, deal.targetUrl)}
-                  className={w-full py-3 px-4 rounded-xl font-bold transition flex items-center justify-center gap-2 }
+                  className={`w-full py-3 px-4 rounded-xl font-bold transition flex items-center justify-center gap-2 ${
+                    user 
+                      ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg' 
+                      : 'bg-slate-700 hover:bg-slate-600 text-slate-300 border border-slate-600'
+                  }`}
                 >
                   {user ? (
                     <>Unlock Deal <ArrowRight className="h-4 w-4" /></>
