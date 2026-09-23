@@ -24,10 +24,7 @@ export default function BlogPreview() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const q = query(
-          collection(db, 'blogs'),
-          where('target_website', '==', 'flightchap')
-        );
+        const q = query(collection(db, 'blogs'));
         const querySnapshot = await getDocs(q);
         let fetchedPosts: BlogPost[] = [];
         const rawPosts: any[] = [];
