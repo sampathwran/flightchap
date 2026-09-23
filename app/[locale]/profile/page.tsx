@@ -4,9 +4,10 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import { Heart, Bell, Tag, Settings, LogOut, Plane, Copy, CheckCircle } from 'lucide-react';
-import { auth } from '@/lib/firebase';
+import { Heart, Bell, Tag, Settings, LogOut, Plane, Copy, CheckCircle, Trash2 } from 'lucide-react';
+import { auth, db } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
+import { collection, query, orderBy, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
 
 export default function ProfilePage() {
   const { user, loading } = useAuth();
@@ -15,11 +16,34 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('saved');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
+  const [promoCodes, setPromoCodes] = useState<any[]>([]);
+  const [savedDeals, setSavedDeals] = useState<any[]>([]);
+
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
     }
   }, [user, loading, router]);
+
+  // Fetch Promo Codes globally
+  useEffect(() => {
+    const q = query(collection(db, 'promo_codes'), orderBy('createdAt', 'desc'));
+    const unsub = onSnapshot(q, (snapshot) => {
+      setPromoCodes(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    });
+    return () => unsub();
+  }, []);
+
+  // Fetch User's Saved Deals
+  useEffect(() => {
+    if (user) {
+      const q = query(collection(db, `users/${user.uid}/saved_deals`), orderBy('savedAt', 'desc'));
+      const unsub = onSnapshot(q, (snapshot) => {
+        setSavedDeals(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+      });
+      return () => unsub();
+    }
+  }, [user]);
 
   const handleLogout = async () => {
     try {
@@ -36,25 +60,23 @@ export default function ProfilePage() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
+  const removeSavedDeal = async (dealId: string) => {
+    if (!user) return;
+    try {
+      await deleteDoc(doc(db, `users/${user.uid}/saved_deals`, dealId));
+    } catch (error) {
+      console.error("Error removing deal", error);
+    }
+  };
+
   if (loading || !user) {
     return <div className="min-h-screen flex items-center justify-center pt-20"><div className="animate-pulse flex items-center gap-2"><div className="w-6 h-6 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div> Loading...</div></div>;
   }
 
-  // Dummy Data
-  const savedDeals = [
-    { id: 1, title: "Secret Bali Villa Getaway", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=80", discount: "40% OFF" },
-    { id: 2, title: "Maldives Water Villa 3 Nights", image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400&q=80", discount: "Special Rate" }
-  ];
-
+  // Dummy Fare Alerts (Will make real later)
   const fareAlerts = [
     { id: 1, from: "CMB (Colombo)", to: "DXB (Dubai)", targetPrice: "< $250", currentPrice: "$310" },
     { id: 2, from: "CMB (Colombo)", to: "MEL (Melbourne)", targetPrice: "< $600", currentPrice: "$720" }
-  ];
-
-  const promoCodes = [
-    { id: 1, provider: "Agoda VIP", code: "FLIGHTCHAP10", discount: "Extra 10% Off on Hotels", color: "bg-blue-50 text-blue-600" },
-    { id: 2, provider: "Klook Activities", code: "EXPLORE5", discount: "5% Off all Tours", color: "bg-orange-50 text-orange-600" },
-    { id: 3, provider: "Airalo e-SIM", code: "CHAP15", discount: "15% Off First Purchase", color: "bg-purple-50 text-purple-600" }
   ];
 
   return (
@@ -86,7 +108,7 @@ export default function ProfilePage() {
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
               <nav className="flex flex-col">
                 <button onClick={() => setActiveTab('saved')} className={`flex items-center gap-3 px-6 py-4 font-medium transition ${activeTab === 'saved' ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' : 'text-slate-600 hover:bg-slate-50'}`}>
-                  <Heart className="h-5 w-5" /> {t('tabSaved')}
+                  <Heart className="h-5 w-5" /> {t('tabSaved')} <span className="ml-auto bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full text-xs">{savedDeals.length}</span>
                 </button>
                 <button onClick={() => setActiveTab('alerts')} className={`flex items-center gap-3 px-6 py-4 font-medium transition ${activeTab === 'alerts' ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' : 'text-slate-600 hover:bg-slate-50'}`}>
                   <Bell className="h-5 w-5" /> {t('tabAlerts')}
@@ -110,27 +132,35 @@ export default function ProfilePage() {
                 <h2 className="text-2xl font-bold text-slate-800 mb-2">{t('savedTitle')}</h2>
                 <p className="text-slate-500 mb-8">{t('savedSubtitle')}</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {savedDeals.map(deal => (
-                    <div key={deal.id} className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition group">
-                      <div className="h-40 relative overflow-hidden">
-                        <img src={deal.image} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                        <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
-                          {deal.discount}
+                {savedDeals.length === 0 ? (
+                  <div className="text-center py-12 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                    <Heart className="h-12 w-12 text-slate-300 mx-auto mb-3" />
+                    <h3 className="text-lg font-bold text-slate-700">No saved deals yet</h3>
+                    <p className="text-slate-500 mt-1">Browse our offers and click the heart icon to save them here.</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {savedDeals.map(deal => (
+                      <div key={deal.id} className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition group">
+                        <div className="h-40 relative overflow-hidden">
+                          <img src={deal.imageUrl} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                          <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                            {deal.discount}
+                          </div>
+                          <button onClick={() => removeSavedDeal(deal.id)} className="absolute top-2 left-2 bg-white/90 hover:bg-red-50 p-1.5 rounded-full text-red-500 shadow-sm transition">
+                            <Heart className="h-4 w-4 fill-current" />
+                          </button>
                         </div>
-                        <div className="absolute top-2 left-2 bg-white/90 p-1.5 rounded-full text-red-500 shadow-sm">
-                          <Heart className="h-4 w-4 fill-current" />
+                        <div className="p-4">
+                          <h3 className="font-bold text-slate-800 mb-3">{deal.title}</h3>
+                          <button onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="w-full py-2 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-bold rounded-lg transition text-sm">
+                            View Deal
+                          </button>
                         </div>
                       </div>
-                      <div className="p-4">
-                        <h3 className="font-bold text-slate-800 mb-3">{deal.title}</h3>
-                        <button className="w-full py-2 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-bold rounded-lg transition text-sm">
-                          View Deal
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
@@ -162,7 +192,7 @@ export default function ProfilePage() {
                   ))}
                   
                   <button className="w-full py-4 border-2 border-dashed border-slate-300 rounded-xl text-slate-500 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition font-medium flex items-center justify-center gap-2">
-                    <Bell className="h-5 w-5" /> Add New Fare Alert
+                    <Bell className="h-5 w-5" /> Add New Fare Alert (Coming Soon)
                   </button>
                 </div>
               </div>
@@ -173,25 +203,33 @@ export default function ProfilePage() {
                 <h2 className="text-2xl font-bold text-slate-800 mb-2">{t('promosTitle')}</h2>
                 <p className="text-slate-500 mb-8">{t('promosSubtitle')}</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {promoCodes.map(promo => (
-                    <div key={promo.id} className="border border-slate-200 rounded-2xl p-6 relative overflow-hidden group">
-                      <div className={`absolute top-0 left-0 w-1 h-full ${promo.color.split(' ')[0]}`}></div>
-                      <h3 className="font-bold text-slate-800 text-lg mb-1">{promo.provider}</h3>
-                      <p className="text-slate-500 text-sm mb-4">{promo.discount}</p>
-                      
-                      <div className="bg-slate-100 p-3 rounded-lg flex items-center justify-between border border-dashed border-slate-300">
-                        <span className="font-mono font-bold text-slate-700 tracking-wider">{promo.code}</span>
-                        <button 
-                          onClick={() => copyToClipboard(promo.code)}
-                          className="text-blue-600 hover:text-blue-800 transition p-1"
-                        >
-                          {copiedCode === promo.code ? <CheckCircle className="h-5 w-5 text-green-500" /> : <Copy className="h-5 w-5" />}
-                        </button>
+                {promoCodes.length === 0 ? (
+                  <div className="text-center py-12 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                    <Tag className="h-12 w-12 text-slate-300 mx-auto mb-3" />
+                    <h3 className="text-lg font-bold text-slate-700">No active promo codes</h3>
+                    <p className="text-slate-500 mt-1">Check back later for VIP discounts.</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {promoCodes.map(promo => (
+                      <div key={promo.id} className="border border-slate-200 rounded-2xl p-6 relative overflow-hidden group">
+                        <div className={`absolute top-0 left-0 w-1 h-full ${promo.color || 'bg-blue-500'}`}></div>
+                        <h3 className="font-bold text-slate-800 text-lg mb-1">{promo.provider}</h3>
+                        <p className="text-slate-500 text-sm mb-4">{promo.discount}</p>
+                        
+                        <div className="bg-slate-100 p-3 rounded-lg flex items-center justify-between border border-dashed border-slate-300">
+                          <span className="font-mono font-bold text-slate-700 tracking-wider">{promo.code}</span>
+                          <button 
+                            onClick={() => copyToClipboard(promo.code)}
+                            className="text-blue-600 hover:text-blue-800 transition p-1"
+                          >
+                            {copiedCode === promo.code ? <CheckCircle className="h-5 w-5 text-green-500" /> : <Copy className="h-5 w-5" />}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 

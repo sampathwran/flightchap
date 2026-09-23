@@ -2,11 +2,12 @@
 
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
-import { Lock, Star, ArrowRight } from 'lucide-react';
+import { Lock, Star, ArrowRight, Heart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
-import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, doc, setDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+
 
 export default function MemberDeals() {
   const { user } = useAuth();
@@ -15,6 +16,42 @@ export default function MemberDeals() {
   
   const [deals, setDeals] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [savedDealIds, setSavedDealIds] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    if (!user) {
+      setSavedDealIds(new Set());
+      return;
+    }
+    const unsub = onSnapshot(collection(db, `users/${user.uid}/saved_deals`), (snapshot) => {
+      const ids = new Set<string>();
+      snapshot.forEach(doc => ids.add(doc.id));
+      setSavedDealIds(ids);
+    });
+    return () => unsub();
+  }, [user]);
+
+  const toggleSaveDeal = async (e: React.MouseEvent, deal: any) => {
+    e.preventDefault();
+    if (!user) {
+      router.push('/login');
+      return;
+    }
+    
+    const dealRef = doc(db, `users/${user.uid}/saved_deals`, deal.id);
+    if (savedDealIds.has(deal.id)) {
+      await deleteDoc(dealRef);
+    } else {
+      await setDoc(dealRef, {
+        dealId: deal.id,
+        title: deal.title,
+        discount: deal.discount,
+        imageUrl: deal.imageUrl,
+        targetUrl: deal.targetUrl,
+        savedAt: new Date().toISOString()
+      });
+    }
+  };
 
   useEffect(() => {
     const q = query(
