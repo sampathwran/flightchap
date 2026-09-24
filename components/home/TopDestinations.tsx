@@ -247,9 +247,7 @@ export default function TopDestinations() {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                           </button>
 
-                          <a href="/attractions" className="w-full py-1 text-gray-500 hover:text-[#673AB7] text-sm font-bold flex justify-center items-center gap-2 transition-colors">
-                            <span className="text-lg">🎡</span> View Flight Deals
-                          </a>
+                          
                         </div>
                       </div>
                   </div>
