@@ -232,7 +232,7 @@ export default function TopDestinations() {
                           )}
                           {city.startingPrice && (
                             <div className="flex items-center text-xs text-gray-600 font-medium">
-                              <span className="mr-2 text-sm">💰</span> {t('startingFrom')} <span className="font-bold text-gray-900 ml-1">${city.startingPrice} {t('perNight')}</span>
+                              <span className="mr-2 text-sm">💰</span> {t('startingFrom')} <span className="font-bold text-gray-900 ml-1">${city.startingPrice} (Avg. Return Flight)</span>
                             </div>
                           )}
                         </div>
@@ -248,7 +248,7 @@ export default function TopDestinations() {
                           </button>
 
                           <a href="/attractions" className="w-full py-1 text-gray-500 hover:text-[#673AB7] text-sm font-bold flex justify-center items-center gap-2 transition-colors">
-                            <span className="text-lg">🎡</span> {t('topAttractions')}
+                            <span className="text-lg">🎡</span> View Flight Deals
                           </a>
                         </div>
                       </div>
