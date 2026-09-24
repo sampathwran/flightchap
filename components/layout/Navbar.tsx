@@ -25,7 +25,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight drop-shadow-md">
-              <img src="/logo.jpg" alt="FlightChap Logo" className="h-10 w-auto rounded-lg shadow-sm" />
+              <img src="/logo_final.png" alt="FlightChap Logo" className="h-16 w-auto" />
             </Link>
           </div>
 
