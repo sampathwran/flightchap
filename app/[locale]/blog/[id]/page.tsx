@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
           {post.content ? (
             <div 
-              className="prose prose-lg max-w-none prose-slate prose-a:text-[#673AB7] prose-img:rounded-xl"
+              className="prose max-w-none prose-slate prose-a:text-[#673AB7] prose-img:rounded-xl prose-p:leading-relaxed prose-p:my-3 prose-headings:mt-8 prose-headings:mb-4 text-slate-700 text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           ) : (
