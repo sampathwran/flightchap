@@ -18,9 +18,13 @@ export default function Navbar() {
     router.replace(pathname, { locale: nextLocale });
   };
 
+  
+  const isHome = pathname === "/";
+  const navBgClass = isHome ? "absolute top-0 w-full z-50 bg-transparent text-white border-b border-white/20" : "relative w-full z-50 bg-[#1a0b2e] text-white border-b border-white/10 shadow-lg";
+
   return (
-    <nav className="absolute top-0 w-full z-50 bg-transparent text-white border-b border-white/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={navBgClass}>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
