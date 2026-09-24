@@ -30,6 +30,12 @@ export default function LoginPage() {
           email: cred.user.email,
           createdAt: serverTimestamp(),
         }, { merge: true });
+        
+        await setDoc(doc(db, 'subscribers', cred.user.email || ''), {
+          email: cred.user.email,
+          createdAt: serverTimestamp(),
+          source: 'registration'
+        }, { merge: true });
       }
       router.push('/');
     } catch (err: any) {
@@ -49,6 +55,12 @@ export default function LoginPage() {
         name: cred.user.displayName,
         photoURL: cred.user.photoURL,
         lastLogin: serverTimestamp(),
+      }, { merge: true });
+
+      await setDoc(doc(db, 'subscribers', cred.user.email || ''), {
+        email: cred.user.email,
+        createdAt: serverTimestamp(),
+        source: 'registration'
       }, { merge: true });
       router.push('/');
     } catch (err: any) {
