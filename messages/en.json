@@ -199,5 +199,28 @@
     "promosTitle": "Exclusive Promo Codes",
     "promosSubtitle": "Use these codes at checkout on our partner sites.",
     "btnCopy": "Copy Code"
+  },
+  "About": {
+    "title": "When travelers are searching for their dream flight or perfect stay, we want the obvious choice to be FlightChap.",
+    "subtitle": "Your ultimate travel metasearch engine.",
+    "p1": "We empower travelers by aggregating millions of flight deals, hotels, and rentals across hundreds of trusted booking partners into one place. We do not take payments or handle bookings directly—we simply connect you to the absolute best price with zero hidden fees and zero risk.",
+    "p2": "FlightChap started with a simple idea: use technology to simplify travel comparison. As an affiliate platform, we eliminate the need to check ten different websites. We partner with the world's top travel agencies to show you all the prices in one place, allowing you to click through and book directly with the provider you trust.",
+    "p3": "Always at the forefront of innovation, we continue to leverage cutting-edge tech like AI in our product - to simplify flight search and dramatically enhance the user experience.",
+    "valuesTitle": "Our Core Values",
+    "v1Title": "We are always learning",
+    "v1Desc": "We stay curious, open-minded and ready to grow. We continuously learn, adapt to change and embrace new ideas.",
+    "v2Title": "Technology is at our core",
+    "v2Desc": "By embracing cutting-edge technologies and utilizing AI automation, we are committed to solving real user problems in the smartest way.",
+    "v3Title": "Entrepreneurial passion",
+    "v3Desc": "We believe in challenging the status quo and experimenting with new ways to tackle our challenges.",
+    "statsTitle": "By the numbers",
+    "s1Title": "Localised Websites",
+    "s1Desc": "Available in over 30 languages globally.",
+    "s2Title": "Monthly Users",
+    "s2Desc": "Helping millions find great deals with simple clicks.",
+    "s3Title": "Countries",
+    "s3Desc": "We have an active presence in 190 countries.",
+    "s4Title": "Partner Sites",
+    "s4Desc": "We compare prices from hundreds of platforms instantly."
   }
 }
