@@ -1,4 +1,4 @@
-﻿import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { db } from '@/lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import Image from 'next/image';
@@ -15,8 +15,9 @@ async function getBlogPost(id: string) {
   }
 }
 
-export default async function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = await getBlogPost(params.id);
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const post = await getBlogPost(id);
 
   if (!post) {
     notFound();
