@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { Plane, User, Menu, Globe, Headphones, Briefcase, X } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
@@ -25,8 +25,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight drop-shadow-md">
-              <Plane className="h-8 w-8" />
-              FlightChap
+              <img src="/logo.jpg" alt="FlightChap Logo" className="h-10 w-auto rounded-lg shadow-sm" />
             </Link>
           </div>
 
