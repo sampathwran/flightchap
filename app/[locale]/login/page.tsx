@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider } from '@/lib/firebase';
+import { auth, googleProvider, db } from '@/lib/firebase';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { Plane, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -24,7 +25,11 @@ export default function LoginPage() {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
       } else {
-        await createUserWithEmailAndPassword(auth, email, password);
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, 'users', cred.user.uid), {
+          email: cred.user.email,
+          createdAt: serverTimestamp(),
+        }, { merge: true });
       }
       router.push('/');
     } catch (err: any) {
@@ -38,7 +43,13 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      await signInWithPopup(auth, googleProvider);
+      const cred = await signInWithPopup(auth, googleProvider);
+      await setDoc(doc(db, 'users', cred.user.uid), {
+        email: cred.user.email,
+        name: cred.user.displayName,
+        photoURL: cred.user.photoURL,
+        lastLogin: serverTimestamp(),
+      }, { merge: true });
       router.push('/');
     } catch (err: any) {
       setError(err.message);
