@@ -17,10 +17,9 @@ async function fetchDeals(collectionName: string) {
 }
 
 export default async function DealsPage() {
-  const [flashDeals, memberDeals, specialOffers] = await Promise.all([
+  const [flashDeals, memberDeals] = await Promise.all([
     fetchDeals('flash_deals'),
-    fetchDeals('member_deals'),
-    fetchDeals('special_offers')
+    fetchDeals('member_deals')
   ]);
 
   const DealCard = ({ deal, isFlash = false, isSpecial = false }: any) => {
@@ -121,7 +120,7 @@ export default async function DealsPage() {
           </section>
         )}
 
-        {flashDeals.length === 0 && memberDeals.length === 0 && specialOffers.length === 0 && (
+        {flashDeals.length === 0 && memberDeals.length === 0 && (
           <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-slate-100">
             <h2 className="text-2xl font-bold text-slate-800 mb-2">No Deals Available</h2>
             <p className="text-slate-500">Please check back later for exciting new offers!</p>
