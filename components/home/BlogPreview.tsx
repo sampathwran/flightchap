@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -111,14 +111,14 @@ export default function BlogPreview() {
                   <span className="text-xs text-slate-400">{post.date}</span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2 line-clamp-2">
-                  <Link href={`/blog/${post.id}`} className="hover:text-blue-600 transition">
+                  <Link href={`/blog/${post.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
                     {post.title}
                   </Link>
                 </h3>
                 <p className="text-slate-600 text-sm mb-4 line-clamp-3 flex-1">
                   {post.excerpt}
                 </p>
-                <Link href={`/blog/${post.id}`} className="text-blue-600 font-medium hover:underline text-sm mt-auto inline-block">
+                <Link href={`/blog/${post.id}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-medium hover:underline text-sm mt-auto inline-block">
                   {t('readMore')} &rarr;
                 </Link>
               </div>
