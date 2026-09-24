@@ -8,6 +8,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { AuthProvider } from '@/context/AuthContext';
+import Tracking from '@/components/Tracking';
 import Script from 'next/script';
 
 const geistSans = Geist({
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>
+          <Tracking />
           <Navbar />
           <main className="flex-grow">
             {children}
