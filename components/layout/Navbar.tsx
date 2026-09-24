@@ -21,11 +21,11 @@ export default function Navbar() {
   return (
     <nav className="absolute top-0 w-full z-50 bg-transparent text-white border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-28">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight drop-shadow-md">
-              <img src="/logo_final.png" alt="FlightChap Logo" className="h-16 w-auto" />
+              <img src="/logo_final.png" alt="FlightChap Logo" className="h-24 w-auto" />
             </Link>
           </div>
 

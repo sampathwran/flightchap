@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl text-white">
-              <img src="/logo_final.png" alt="FlightChap Logo" className="h-20 w-auto" />
+              <img src="/logo_final.png" alt="FlightChap Logo" className="h-32 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               {t('description')}
