@@ -36,10 +36,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="bg-[#673AB7]/10 text-[#673AB7] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-              {post.type || 'Article'}
-            </span>
+          <div className="flex items-center flex-wrap gap-4 mb-4">
+            {post.category && (
+              <span className="bg-[#673AB7]/10 text-[#673AB7] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {post.category}
+              </span>
+            )}
+            {post.readTime && (
+              <span className="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {post.readTime}
+              </span>
+            )}
             {dateString && (
               <span className="text-sm text-slate-500 font-medium">{dateString}</span>
             )}
@@ -62,10 +69,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
         {/* Content */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
-          {post.htmlContent ? (
+          {post.content ? (
             <div 
               className="prose prose-lg max-w-none prose-slate prose-a:text-[#673AB7] prose-img:rounded-xl"
-              dangerouslySetInnerHTML={{ __html: post.htmlContent }}
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
           ) : (
             <p className="text-slate-500 italic text-center">No content available.</p>
