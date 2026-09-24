@@ -1,0 +1,82 @@
+'use client';
+import { useAuth } from '@/context/AuthContext';
+import { Link } from '@/i18n/routing';
+import { Tag, Lock, ArrowRight, Star } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+
+export default function VIPPromoSection() {
+  const { user } = useAuth();
+  const [promos, setPromos] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchPromos() {
+      const q = query(collection(db, 'promo_codes'), orderBy('createdAt', 'desc'), limit(3));
+      const snapshot = await getDocs(q);
+      setPromos(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    }
+    fetchPromos();
+  }, []);
+
+  if (promos.length === 0) return null;
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center mb-12">
+          <div className="inline-flex items-center justify-center p-3 bg-yellow-100 rounded-full mb-4">
+            <Star className="h-6 w-6 text-yellow-600 fill-yellow-600" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Members VIP Club</h2>
+          <p className="text-lg text-slate-500 max-w-2xl">
+            Exclusive Member Discounts. Unlock premium travel deals and secret rates available only to our registered members.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {promos.map(promo => (
+            <div key={promo.id} className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#673AB7]"></div>
+              
+              <div className="flex items-start gap-4 mb-4">
+                {promo.imageUrl ? (
+                  <img src={promo.imageUrl} alt={promo.provider} className="w-14 h-14 rounded-full object-cover border border-slate-100 shadow-sm" />
+                ) : (
+                  <div className="w-14 h-14 rounded-full bg-[#673AB7]/10 text-[#673AB7] flex items-center justify-center font-bold text-2xl">
+                    {promo.provider?.charAt(0) || '%'}
+                  </div>
+                )}
+                <div>
+                  <h3 className="font-bold text-slate-800 text-lg">{promo.provider}</h3>
+                  <span className="inline-block px-2 py-1 bg-red-50 text-red-600 text-xs font-bold rounded mt-1">{promo.discountBadge || promo.discount || 'Special Offer'}</span>
+                </div>
+              </div>
+              
+              {promo.description && (
+                <p className="text-slate-500 text-sm mb-6 line-clamp-2">{promo.description}</p>
+              )}
+
+              <div className="mt-auto">
+                {user ? (
+                  <Link href="/profile" className="w-full flex items-center justify-between p-3 bg-blue-50 text-blue-600 rounded-xl font-bold hover:bg-blue-100 transition group/btn">
+                    <span>View Promo Code</span>
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                ) : (
+                  <Link href="/login" className="w-full flex items-center justify-between p-3 bg-slate-100 text-slate-500 rounded-xl font-medium hover:bg-slate-200 transition group/btn">
+                    <div className="flex items-center gap-2">
+                      <Lock className="h-4 w-4" />
+                      <span>Login to unlock code</span>
+                    </div>
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
