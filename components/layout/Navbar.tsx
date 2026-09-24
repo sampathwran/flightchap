@@ -36,6 +36,9 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center drop-shadow-md font-medium text-sm lg:text-base">
             <Link href="/" className="hover:text-blue-200 transition">{t('home')}</Link>
+              <Link href="/deals" className="hover:text-blue-200 transition">Deals</Link>
+              <Link href="/vehicles" className="hover:text-blue-200 transition">Vehicles</Link>
+              <Link href="/blog" className="hover:text-blue-200 transition">Blog</Link>
             
             <div className="flex items-center gap-1 hover:text-blue-200 transition">
               <Globe className="h-4 w-4" />
@@ -101,6 +104,9 @@ export default function Navbar() {
       <div className="hidden md:hidden bg-white text-slate-800">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
           <Link href="/" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('home')}</Link>
+            <Link href="/deals" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">Deals</Link>
+            <Link href="/vehicles" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">Vehicles</Link>
+            <Link href="/blog" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">Blog</Link>
           {/* Support link hidden */}
           <Link href="/about" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('aboutUs')}</Link>
           <Link href="/contact" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">{t('contactUs')}</Link>
