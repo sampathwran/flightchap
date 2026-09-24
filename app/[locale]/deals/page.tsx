@@ -105,20 +105,7 @@ export default async function DealsPage() {
           </section>
         )}
 
-        {/* Special Offers */}
-        {specialOffers.length > 0 && (
-          <section>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-blue-100 text-blue-600 rounded-full">
-                <Tag className="w-6 h-6 fill-current" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900">Special Offers</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {specialOffers.map(deal => <DealCard key={deal.id} deal={deal} isSpecial={true} />)}
-            </div>
-          </section>
-        )}
+        
 
         {flashDeals.length === 0 && memberDeals.length === 0 && (
           <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-slate-100">
