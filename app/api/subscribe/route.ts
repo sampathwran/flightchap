@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -9,18 +11,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: true, // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    const mailOptions = {
-      from: `"FlightChap" <${process.env.SMTP_USER}>`,
+    const { data, error } = await resend.emails.send({
+      from: 'FlightChap <info@flightchap.com>',
       to: email,
       subject: 'Thank you for subscribing to FlightChap! ✈️',
       html: `
@@ -32,11 +24,14 @@ export async function POST(req: Request) {
           <p>Best Regards,<br/><strong>The FlightChap Team</strong></p>
         </div>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    if (error) {
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
 
-    return NextResponse.json({ success: true, message: 'Email sent successfully' }, { status: 200 });
+    return NextResponse.json({ success: true, message: 'Email sent successfully', data }, { status: 200 });
   } catch (error) {
     console.error('API Error sending email:', error);
     return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
