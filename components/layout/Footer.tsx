@@ -64,11 +64,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">{t('topDestinations')}</h3>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><Link href="#" className="hover:text-blue-400 transition">{t('flightsNewYork')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition">{t('flightsLondon')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition">{t('flightsDubai')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition">{t('flightsTokyo')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition">{t('flightsParis')}</Link></li>
+              <li><Link href="/flights/new-york" className="hover:text-blue-400 transition">{t('flightsNewYork')}</Link></li>
+              <li><Link href="/flights/london" className="hover:text-blue-400 transition">{t('flightsLondon')}</Link></li>
+              <li><Link href="/flights/dubai" className="hover:text-blue-400 transition">{t('flightsDubai')}</Link></li>
+              <li><Link href="/flights/tokyo" className="hover:text-blue-400 transition">{t('flightsTokyo')}</Link></li>
+              <li><Link href="/flights/paris" className="hover:text-blue-400 transition">{t('flightsParis')}</Link></li>
             </ul>
           </div>
 
