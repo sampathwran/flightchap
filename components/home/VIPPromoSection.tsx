@@ -22,13 +22,13 @@ export default function VIPPromoSection() {
   if (promos.length === 0) return null;
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-12 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-8">
           <div className="inline-flex items-center justify-center p-3 bg-yellow-100 rounded-full mb-4">
             <Star className="h-6 w-6 text-yellow-600 fill-yellow-600" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Members VIP Club</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Members VIP Club</h2>
           <p className="text-lg text-slate-500 max-w-2xl">
             Exclusive Member Discounts. Unlock premium travel deals and secret rates available only to our registered members.
           </p>
@@ -36,14 +36,14 @@ export default function VIPPromoSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {promos.map(promo => (
-            <div key={promo.id} className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+            <div key={promo.id} className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#673AB7]"></div>
               
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-2 px-3 text-sm mb-3">
                 {promo.imageUrl ? (
-                  <img src={promo.imageUrl} alt={promo.provider} className="w-14 h-14 rounded-full object-cover border border-slate-100 shadow-sm" />
+                  <img src={promo.imageUrl} alt={promo.provider} className="w-10 h-10 rounded-full object-cover border border-slate-100 shadow-sm" />
                 ) : (
-                  <div className="w-14 h-14 rounded-full bg-[#673AB7]/10 text-[#673AB7] flex items-center justify-center font-bold text-2xl">
+                  <div className="w-10 h-10 rounded-full bg-[#673AB7]/10 text-[#673AB7] flex items-center justify-center font-bold text-2xl">
                     {promo.provider?.charAt(0) || '%'}
                   </div>
                 )}
@@ -54,17 +54,17 @@ export default function VIPPromoSection() {
               </div>
               
               {promo.description && (
-                <p className="text-slate-500 text-sm mb-6 line-clamp-2">{promo.description}</p>
+                <p className="text-slate-500 text-sm mb-4 line-clamp-2">{promo.description}</p>
               )}
 
               <div className="mt-auto">
                 {user ? (
-                  <Link href="/profile" className="w-full flex items-center justify-between p-3 bg-blue-50 text-blue-600 rounded-xl font-bold hover:bg-blue-100 transition group/btn">
+                  <Link href="/profile" className="w-full flex items-center justify-between p-2 px-3 text-sm bg-blue-50 text-blue-600 rounded-xl font-bold hover:bg-blue-100 transition group/btn">
                     <span>View Promo Code</span>
                     <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 ) : (
-                  <Link href="/login" className="w-full flex items-center justify-between p-3 bg-slate-100 text-slate-500 rounded-xl font-medium hover:bg-slate-200 transition group/btn">
+                  <Link href="/login" className="w-full flex items-center justify-between p-2 px-3 text-sm bg-slate-100 text-slate-500 rounded-xl font-medium hover:bg-slate-200 transition group/btn">
                     <div className="flex items-center gap-2">
                       <Lock className="h-4 w-4" />
                       <span>Login to unlock code</span>
