@@ -36,7 +36,7 @@ export default function VIPPromoSection() {
 
         <div className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x scroll-smooth">
           {promos.map(promo => (
-            <div key={promo.id} className="min-w-[280px] md:min-w-[340px] flex-1 shrink-0 snap-start bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group flex flex-col">
+            <div key={promo.id} className="w-[85vw] sm:w-[45vw] md:w-[340px] shrink-0 snap-start bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#673AB7]"></div>
               
               <div className="flex items-start gap-2 px-3 text-sm mb-3">

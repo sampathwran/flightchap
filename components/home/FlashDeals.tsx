@@ -121,8 +121,8 @@ export default function FlashDeals() {
            <div className="flex justify-center gap-4 mb-8">
              {[1,2,3,4,5].map(i => <div key={i} className="h-10 w-24 bg-slate-200 rounded-full animate-pulse"></div>)}
            </div>
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-             {[1,2,3,4].map(i => <div key={i} className="h-72 bg-slate-100 rounded-xl animate-pulse"></div>)}
+           <div className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+             {[1,2,3,4].map(i => <div key={i} className="w-[85vw] sm:w-[45vw] lg:w-auto shrink-0 h-72 bg-slate-100 rounded-xl animate-pulse"></div>)}
            </div>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function FlashDeals() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
           {filteredDeals.length > 0 ? filteredDeals.map((deal) => {
              const isExpired = deal.endTime < new Date();
              
