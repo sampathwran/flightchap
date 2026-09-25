@@ -209,14 +209,14 @@ export default function FlashDeals() {
         <div className="relative group">
           <button 
             onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+            className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           
           <button 
             onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+            className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
@@ -226,7 +226,7 @@ export default function FlashDeals() {
              const isExpired = deal.endTime < new Date();
              
              return (
-              <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+              <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="w-[100%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] shrink-0 snap-start cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
                 <div className="relative h-36 overflow-hidden shrink-0">
                   <div role="button" tabIndex={0} onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />

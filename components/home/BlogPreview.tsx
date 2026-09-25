@@ -77,7 +77,7 @@ export default function BlogPreview() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="animate-pulse h-8 w-48 bg-slate-200 rounded mb-10"></div>
            <div className="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
-             {[1,2,3].map(i => <div key={i} className="w-[85vw] sm:w-[45vw] md:w-auto shrink-0 h-72 bg-white rounded-xl animate-pulse"></div>)}
+             {[1,2,3].map(i => <div key={i} className="w-[100%] sm:w-[45vw] md:w-auto shrink-0 h-72 bg-white rounded-xl animate-pulse"></div>)}
            </div>
         </div>
       </section>
@@ -101,7 +101,7 @@ export default function BlogPreview() {
 
         <div className="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
           {posts.map((post) => (
-            <div key={post.id} className="w-[85vw] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
+            <div key={post.id} className="w-[100%] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 overflow-hidden shrink-0">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
               </div>
