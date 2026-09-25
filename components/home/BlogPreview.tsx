@@ -1,7 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from '@/i18n/routing';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { useTranslations } from 'next-intl';
@@ -19,6 +19,7 @@ export default function BlogPreview() {
   const t = useTranslations('BlogPreview');
 
   const [posts, setPosts] = useState<BlogPost[]>([]);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -76,9 +77,25 @@ export default function BlogPreview() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="animate-pulse h-8 w-48 bg-slate-200 rounded mb-10"></div>
-           <div className="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
+           <div className="relative group">
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            className="absolute left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            className="absolute right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div ref={sliderRef} className="flex flex-row overflow-x-auto gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
              {[1,2,3].map(i => <div key={i} className="w-[100%] sm:w-[45vw] md:w-auto shrink-0 h-72 bg-white rounded-xl animate-pulse"></div>)}
            </div>
+          </div>
         </div>
       </section>
     );
@@ -99,7 +116,22 @@ export default function BlogPreview() {
           </Link>
         </div>
 
-        <div className="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
+        <div className="relative group">
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            className="absolute left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            className="absolute right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div ref={sliderRef} className="flex flex-row overflow-x-auto gap-6 md:gap-8 pb-6 snap-x snap-mandatory hide-scrollbar">
           {posts.map((post) => (
             <div key={post.id} className="w-[100%] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 overflow-hidden shrink-0">
@@ -124,6 +156,7 @@ export default function BlogPreview() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

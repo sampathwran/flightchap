@@ -2,9 +2,9 @@
 
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
-import { Lock, Star, ArrowRight, Heart } from 'lucide-react';
+import { Lock, Star, ArrowRight, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { collection, query, orderBy, onSnapshot, doc, setDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
@@ -15,6 +15,7 @@ export default function MemberDeals() {
   const t = useTranslations('MemberDeals');
   
   const [deals, setDeals] = useState<any[]>([]);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   const [savedDealIds, setSavedDealIds] = useState<Set<string>>(new Set());
 
