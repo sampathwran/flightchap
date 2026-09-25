@@ -115,14 +115,14 @@ export default function HeroSearch() {
 
         {/* Tabs */}
         <div className="flex justify-center mb-6 overflow-x-auto hide-scrollbar px-2">
-          <div className="flex bg-slate-900/60 backdrop-blur-md rounded-xl p-1 gap-1">
+          <div className="grid grid-cols-2 md:flex bg-slate-900/60 backdrop-blur-md rounded-xl p-1 gap-1 w-full md:w-auto">
             {tabs.map((tab, idx) => {
               const TabIcon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(idx)}
-                  className={`flex items-center gap-2 px-4 md:px-6 py-3 rounded-lg font-semibold transition-all whitespace-nowrap text-sm md:text-base ${
+                  className={`flex items-center justify-center w-full gap-2 px-2 md:px-6 py-3 rounded-lg font-semibold transition-all whitespace-nowrap text-xs sm:text-sm md:text-base ${
                     activeTab === idx 
                       ? 'bg-blue-600 text-white shadow-lg' 
                       : 'text-slate-200 hover:text-white hover:bg-slate-700/50'
