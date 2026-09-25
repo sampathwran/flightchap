@@ -37,8 +37,9 @@ const destinations = {
   },
 };
 
-export function generateMetadata({ params }: { params: { city: string } }): Metadata {
-  const cityKey = params.city.toLowerCase();
+export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const cityKey = resolvedParams.city.toLowerCase();
   const cityInfo = destinations[cityKey as keyof typeof destinations];
   if (!cityInfo) return { title: 'Flights | FlightChap' };
   
@@ -48,8 +49,9 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   };
 }
 
-export default function DestinationPage({ params }: { params: { locale: string, city: string } }) {
-  const cityKey = params.city.toLowerCase() as keyof typeof destinations;
+export default async function DestinationPage({ params }: { params: Promise<{ locale: string, city: string }> }) {
+  const resolvedParams = await params;
+  const cityKey = resolvedParams.city.toLowerCase() as keyof typeof destinations;
   const cityInfo = destinations[cityKey];
 
   if (!cityInfo) {
