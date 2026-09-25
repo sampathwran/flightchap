@@ -1,14 +1,15 @@
 'use client';
 import { useAuth } from '@/context/AuthContext';
 import { Link } from '@/i18n/routing';
-import { Tag, Lock, ArrowRight, Star } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { Tag, Lock, ArrowRight, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
 import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 export default function VIPPromoSection() {
   const { user } = useAuth();
   const [promos, setPromos] = useState<any[]>([]);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchPromos() {
@@ -34,7 +35,22 @@ export default function VIPPromoSection() {
           </p>
         </div>
 
-        <div className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x scroll-smooth">
+        <div className="relative group">
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-white hover:text-blue-600 transition md:opacity-0 group-hover:opacity-100"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div ref={sliderRef} className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x scroll-smooth">
           {promos.map(promo => (
             <div key={promo.id} className="w-[100%] sm:w-[45vw] md:w-[340px] shrink-0 snap-start bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#673AB7]"></div>
@@ -75,6 +91,7 @@ export default function VIPPromoSection() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
