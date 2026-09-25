@@ -1,5 +1,5 @@
 "use client";
-import { Plane, User, Menu, Globe, Headphones, Briefcase, X } from 'lucide-react';
+import { ChevronDown, Plane, User, Menu, Globe, Headphones, Briefcase, X } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useTranslations, useLocale } from 'next-intl';
@@ -49,12 +49,12 @@ export default function Navbar() {
 
           {/* User Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Globe className="h-4 w-4" />
+            <div className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full pl-3 pr-2 py-1.5 transition-all cursor-pointer relative group">
+              <Globe className="h-4 w-4 text-white" />
               <select 
                 value={locale} 
                 onChange={switchLocale}
-                className="bg-transparent text-white font-medium text-sm border-none outline-none cursor-pointer drop-shadow-md appearance-none"
+                className="bg-transparent text-white font-medium text-sm border-none outline-none cursor-pointer drop-shadow-md appearance-none pr-4"
               >
                 <option value="en" className="text-black">EN</option>
                 <option value="si" className="text-black">SI</option>
@@ -72,6 +72,7 @@ export default function Navbar() {
                 <option value="nl" className="text-black">NL</option>
                 <option value="tr" className="text-black">TR</option>
               </select>
+              <ChevronDown className="h-3 w-3 text-white/70 absolute right-3 pointer-events-none group-hover:text-white transition-colors" />
             </div>
             {user ? (
               <div className="flex items-center gap-4">
@@ -114,7 +115,7 @@ export default function Navbar() {
           </div>
           
           <div className="p-6 border-t border-slate-100 bg-slate-50 flex flex-col gap-4">
-             <div className="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200">
+             <div className="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200 relative">
                <div className="flex items-center gap-2 text-slate-600 font-medium">
                  <Globe className="h-5 w-5" />
                  <span>Language</span>
@@ -125,7 +126,7 @@ export default function Navbar() {
                     switchLocale(e);
                     setIsMobileMenuOpen(false);
                   }}
-                  className="bg-transparent text-slate-800 font-bold text-lg border-none outline-none cursor-pointer appearance-none text-right"
+                  className="bg-transparent text-slate-800 font-bold text-lg border-none outline-none cursor-pointer appearance-none text-right pr-6 relative z-10"
                 >
                   <option value="en">English (EN)</option>
                   <option value="si">????? (SI)</option>
@@ -133,6 +134,9 @@ export default function Navbar() {
                   <option value="fr">Fran�ais (FR)</option>
                   <option value="de">Deutsch (DE)</option>
                 </select>
+                <div className="absolute right-6 pointer-events-none">
+                  <ChevronDown className="h-5 w-5 text-slate-400" />
+                </div>
              </div>
              
              {user ? (
