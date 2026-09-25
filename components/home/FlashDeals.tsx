@@ -1,5 +1,5 @@
 ﻿'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Clock, Plane, Car, Wifi, MoveRight, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, where, getDocs, doc, setDoc, deleteDoc, onSnapshot } from 'firebase/firestore';
@@ -26,6 +26,23 @@ export default function FlashDeals() {
   const t = useTranslations('FlashDeals');
   const { user } = useAuth();
   const router = useRouter();
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        const maxScrollLeft = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+        if (sliderRef.current.scrollLeft >= maxScrollLeft - 10) {
+          sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          const scrollAmount = sliderRef.current.clientWidth < 640 ? sliderRef.current.clientWidth * 0.85 : 340;
+          sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   const [deals, setDeals] = useState<Deal[]>([]);
   const [loading, setLoading] = useState(true);
@@ -121,7 +138,7 @@ export default function FlashDeals() {
            <div className="flex justify-center gap-4 mb-8">
              {[1,2,3,4,5].map(i => <div key={i} className="h-10 w-24 bg-slate-200 rounded-full animate-pulse"></div>)}
            </div>
-           <div className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+           <div ref={sliderRef} className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
              {[1,2,3,4].map(i => <div key={i} className="w-[85vw] sm:w-[45vw] lg:w-auto shrink-0 h-72 bg-slate-100 rounded-xl animate-pulse"></div>)}
            </div>
         </div>
@@ -179,7 +196,7 @@ export default function FlashDeals() {
              
              return (
               <div key={deal.id} onClick={() => window.open(deal.targetUrl || '#', '_blank')} className="cursor-pointer group rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
-                <div className="relative h-48 overflow-hidden shrink-0">
+                <div className="relative h-36 overflow-hidden shrink-0">
                   <div role="button" tabIndex={0} onClick={(e) => toggleSaveDeal(e, deal)} className="absolute top-3 right-3 bg-white/90 hover:bg-slate-50 p-2 rounded-full text-slate-300 shadow-md transition z-30 hover:scale-110 cursor-pointer">
                     <Heart className={`h-5 w-5 ${savedDealIds.has(deal.id) ? 'fill-red-500 text-red-500' : 'text-slate-400'}`} />
                   </div>
@@ -208,7 +225,7 @@ export default function FlashDeals() {
                     {getCategoryIcon(deal.category)} {deal.category}
                   </div>
                 </div>
-                <div className="p-5 flex flex-col flex-1">
+                <div className="p-4 flex flex-col flex-1">
                   
                   {/* From -> To display for flights/transfers */}
                   {(deal.category === 'Flights' || deal.category === 'Transfers') && deal.to ? (
@@ -221,14 +238,14 @@ export default function FlashDeals() {
                     </div>
                   ) : null}
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2">{deal.title}</h3>
+                  <h3 className="text-base font-bold text-slate-900 mb-1 line-clamp-2">{deal.title}</h3>
                   
-                  <div className="mt-auto pt-4 flex items-end justify-between border-t border-slate-50">
+                  <div className="mt-auto pt-3 flex items-end justify-between border-t border-slate-50">
                     <div>
                       {deal.originalPrice && (
                         <span className="text-xs text-slate-400 line-through block">{deal.originalPrice}</span>
                       )}
-                      <span className="text-xl font-bold text-blue-600">{deal.price || t('checkDeal')}</span>
+                      <span className="text-lg font-bold text-blue-600">{deal.price || t('checkDeal')}</span>
                     </div>
                     <div className="bg-slate-900 text-white text-xs font-bold px-3 py-2 rounded-md group-hover:bg-blue-600 transition-colors">
                       Book Now
