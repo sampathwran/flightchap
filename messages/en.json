@@ -230,5 +230,9 @@
     "s3Desc": "We have an active presence in 190 countries.",
     "s4Title": "Partner Sites",
     "s4Desc": "We compare prices from hundreds of platforms instantly."
+  },
+  "VIPPromo": {
+    "title": "Members VIP Club",
+    "subtitle": "Exclusive Member Discounts. Unlock premium travel deals and secret rates available only to our registered members."
   }
 }

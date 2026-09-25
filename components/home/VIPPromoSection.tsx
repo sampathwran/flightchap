@@ -3,11 +3,13 @@ import { useAuth } from '@/context/AuthContext';
 import { Link } from '@/i18n/routing';
 import { Tag, Lock, ArrowRight, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 export default function VIPPromoSection() {
   const { user } = useAuth();
+  const t = useTranslations('VIPPromo');
   const [promos, setPromos] = useState<any[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -29,9 +31,9 @@ export default function VIPPromoSection() {
           <div className="inline-flex items-center justify-center p-3 bg-yellow-100 rounded-full mb-4">
             <Star className="h-6 w-6 text-yellow-600 fill-yellow-600" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Members VIP Club</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{t("title")}</h2>
           <p className="text-lg text-slate-500 max-w-2xl">
-            Exclusive Member Discounts. Unlock premium travel deals and secret rates available only to our registered members.
+            {t("subtitle")}
           </p>
         </div>
 
