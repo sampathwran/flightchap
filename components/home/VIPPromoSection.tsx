@@ -12,7 +12,7 @@ export default function VIPPromoSection() {
 
   useEffect(() => {
     async function fetchPromos() {
-      const q = query(collection(db, 'promo_codes'), orderBy('createdAt', 'desc'), limit(3));
+      const q = query(collection(db, 'promo_codes'), orderBy('createdAt', 'desc'), limit(10));
       const snapshot = await getDocs(q);
       setPromos(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     }
@@ -34,9 +34,9 @@ export default function VIPPromoSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x scroll-smooth">
           {promos.map(promo => (
-            <div key={promo.id} className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+            <div key={promo.id} className="min-w-[280px] md:min-w-[340px] flex-1 shrink-0 snap-start bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#673AB7]"></div>
               
               <div className="flex items-start gap-2 px-3 text-sm mb-3">
