@@ -1,1 +1,71 @@
-{"Navbar":{"home":"Главная","support":"Поддержка","myBookings":"Мои бронирования","signIn":"Войти","aboutUs":"О нас","contactUs":"Контакты"},"HeroSearch":{"whereTo":"Куда?","searchFlights":"Поиск билетов","roundTrip":"Туда-обратно","oneWay":"В одну сторону","multiCity":"Сложный маршрут","economy":"Эконом","premiumEconomy":"Премиум-эконом","business":"Бизнес","firstClass":"Первый класс","passengers":"Пассажиры","adults":"Взрослые","adultsDesc":"12+ лет","children":"Дети","childrenDesc":"2-11 лет","infants":"Младенцы","infantsDesc":"До 2 лет","from":"Откуда","to":"Куда","depart":"Туда","return":"Обратно","search":"Найти","tabFlights":"Авиабилеты","tabRentals":"Авто","tabTransfers":"Трансферы","tabEsim":"e-SIM"},"Destinations":{"title":"Популярные направления","subtitle":"Откройте для себя популярные направления","subtitleExtended":"Найдите выгодные предложения.","tabCountries":"Страны","tabCities":"Города","bestTime":"Лучшее время:","startingFrom":"От:","explore":"Исследовать"},"FlashDeals":{"title":"Горящие предложения","subtitle":"Успейте купить!","viewAll":"Все предложения","viewAllMobile":"Все предложения","bookNow":"Забронировать","expired":"Истекло","endingSoon":"Скоро закончится","checkDeal":"Проверить","noDeals":"Нет горящих предложений"},"BlogPreview":{"title":"Советы путешественникам","subtitle":"Последние статьи.","viewAll":"Все статьи","readMore":"Читать далее"},"FaqSection":{"title":"Частые вопросы","subtitle":"Частые запросы","description":"У нас есть ответы.","q1":"Как найти дешевые билеты?","a1":"Мы сравниваем сотни компаний.","q2":"Есть скрытые комиссии?","a2":"Нет.","q3":"Могу ли я отменить рейс?","a3":"Зависит от авиакомпании.","q4":"Как работают предложения?","a4":"Они ограничены по времени."},"Footer":{"aboutUs":"О нас","contact":"Контакты","privacyPolicy":"Конфиденциальность","termsOfService":"Условия","allRightsReserved":"Все права защищены.","description":"Ваш помощник.","topDestinations":"Популярные направления","flightsNewYork":"В Нью-Йорк","flightsLondon":"В Лондон","flightsDubai":"В Дубай","flightsTokyo":"В Токио","flightsParis":"В Париж","company":"Компания","helpCenter":"Помощь","contactUs":"Свяжитесь с нами","cookiePolicy":"Cookie","subscribeTitle":"Подпишитесь!","subscribeDesc":"Получайте эксклюзивные цены.","placeholderEmail":"Ваш email","btnSubscribe":"Подписаться"},"Support":{"heroTitle":"Чем помочь?","heroSubtitle":"Поиск по базе.","searchPlaceholder":"Поиск...","categoriesTitle":"Категории","catBookings":"Бронирование","catBookingsDesc":"Управление.","catCancellations":"Отмена","catCancellationsDesc":"Как отменить.","catBaggage":"Багаж","catBaggageDesc":"Нормы.","catAccount":"Аккаунт","catAccountDesc":"Профиль.","catTechnical":"Техподдержка","catTechnicalDesc":"Проблемы.","catEsim":"e-SIM","catEsimDesc":"Настройка.","contactTitle":"Нужна помощь?","contactSubtitle":"Поддержка 24/7.","btnChat":"Чат","btnCall":"Позвонить","btnEmail":"Написать","faqTitle":"Частые вопросы","faq1Q":"Сколько длится возврат?","faq1A":"Обычно 5-10 дней.","faq2Q":"Могу ли я передать билет?","faq2A":"Нет.","faq3Q":"Как активировать e-SIM?","faq3A":"Отсканируйте QR-код."},"MemberDeals":{"vipClub":"VIP Клуб","title":"Скидки","subtitle":"Премиальные предложения.","btnUnlock":"Открыть","btnSignIn":"Войти","signUpToUnlock":"Регистрация"},"Profile":{"title":"Мой аккаунт","tabProfile":"Настройки","tabSaved":"Сохраненные","tabAlerts":"Уведомления","tabPromos":"Промокоды","logout":"Выйти","savedTitle":"Сохраненные","savedSubtitle":"Билеты.","alertsTitle":"Уведомления","alertsSubtitle":"Если цена упадет.","promosTitle":"Промокоды","promosSubtitle":"Используйте коды.","btnCopy":"Скопировать"},"About":{"title":"FlightChap.","subtitle":"Метапоисковик.","missionTitle":"Наша Миссия","p1":"Миллионы предложений.","p2":"Упростить поиск.","p3":"Используем ИИ.","whyChooseUs":"Почему мы?","w1Title":"Лучшие цены","w1Desc":"Сравниваем сайты.","w2Title":"100% Прозрачно","w2Desc":"Без комиссий.","w3Title":"ИИ","w3Desc":"Умные алгоритмы.","valuesTitle":"Ценности","v1Title":"Мы учимся","v1Desc":"Открыты.","v2Title":"Технологии","v2Desc":"Решаем проблемы.","v3Title":"Энтузиазм","v3Desc":"Бросаем вызов.","statsTitle":"В цифрах","s1Title":"Языки","s1Desc":"30+ языков.","s2Title":"Пользователи","s2Desc":"Миллионы.","s3Title":"Страны","s3Desc":"190 стран.","s4Title":"Партнеры","s4Desc":"Сотни платформ."},"VIPPromo":{"title":"VIP Клуб","subtitle":"Эксклюзивные скидки."}}
+{
+  "Navbar": { "home": "Главная", "support": "Поддержка", "myBookings": "Мои бронирования", "signIn": "Войти", "aboutUs": "О нас", "contactUs": "Контакты" },
+  "HeroSearch": {
+    "whereTo": "Куда?", "searchFlights": "Найти билеты", "roundTrip": "Туда-обратно", "oneWay": "В одну сторону", "multiCity": "Сложный маршрут",
+    "economy": "Эконом", "premiumEconomy": "Премиум Эконом", "business": "Бизнес", "firstClass": "Первый класс", "passengers": "Пассажиры",
+    "from": "Откуда", "to": "Куда", "depart": "Туда", "return": "Обратно", "adults": "Взрослые", "children": "Дети", "infants": "Младенцы",
+    "tabFlights": "Авиабилеты", "tabFlightsTitle": "Найдите ваше путешествие", "tabFlightsSubtitle": "Сравнивайте дешевые билеты.",
+    "tabRental": "Аренда авто", "tabRentalTitle": "Авто для поездки", "tabRentalSubtitle": "Арендуйте авто по лучшей цене.",
+    "tabTransfers": "Трансферы", "tabTransfersTitle": "Без стресса в аэропорт", "tabTransfersSubtitle": "Бронируйте надежные такси.",
+    "tabEsim": "e-SIM", "tabEsimTitle": "Будьте на связи везде", "tabEsimSubtitle": "Мгновенный интернет с e-SIM.",
+    "labelFrom": "Откуда", "labelTo": "Куда", "labelDates": "Даты", "labelPassengers": "Пассажиры", "labelVehicle": "Автомобиль",
+    "labelPickUp": "Взять", "labelDropOff": "Вернуть", "labelDateTime": "Дата и время", "labelDestination": "Назначение", "labelDuration": "Длительность", "labelDataPackage": "Пакет интернета",
+    "placeholderCityAirport": "Город или аэропорт", "placeholderDepartReturn": "Туда - Обратно", "placeholderCityAddress": "Город, Аэропорт или Адрес",
+    "placeholderPickUpDropOff": "Взять - Вернуть", "placeholderAirportHotel": "Аэропорт или Отель", "placeholderHotelAddress": "Отель или Адрес",
+    "placeholderPickUpTime": "Время аренды", "placeholderWhereTo": "Куда вы летите?",
+    "btnSearchFlights": "Искать", "btnFindVehicles": "Найти авто", "btnSearchTransfers": "Найти трансфер", "btnFindEsims": "Найти e-SIM",
+    "opt1AdultEconomy": "1 Взрослый, Эконом", "optAnyVehicle": "Любое авто", "optEconomyCar": "Эконом авто", "optSUV": "Внедорожник", "optMotorbike": "Мотоцикл",
+    "opt2Passengers": "2 Пассажира", "opt7Days": "7 Дней", "opt15Days": "15 Дней", "opt30Days": "30 Дней", "opt3GB": "3 ГБ", "opt5GB": "5 ГБ", "opt10GB": "10 ГБ", "optUnlimited": "Безлимит"
+  },
+  "RecentViews": { "recentSearches": "Недавние поиски", "viewAgain": "Посмотреть снова", "title": "Ваши недавние поиски" },
+  "TopDestinations": {
+    "title": "Популярные направления", "subtitle": "Исследуйте популярные места", "flightsFrom": "Билеты от", "subtitleExtended": "Исследуйте лучшие страны и города.",
+    "tabCountries": "Страны", "tabCities": "Города", "reviews": "Отзывы", "showLess": "[ Скрыть ]", "readMore": "[ Читать далее... ]",
+    "bestTime": "Лучшее время:", "startingFrom": "От", "perNight": "/ За ночь", "findFlights": "Найти билеты", "topAttractions": "Лучшие места"
+  },
+  "FlashDeals": {
+    "title": "⚡ Горящие предложения", "subtitle": "Успейте купить по скидке!", "viewAll": "Смотреть все →", "viewAllMobile": "Смотреть все",
+    "bookNow": "Забронировать", "expired": "Истекло", "endingSoon": "Скоро закончится", "checkDeal": "Посмотреть", "noDeals": "Нет активных предложений."
+  },
+  "BlogPreview": { "title": "Советы для путешествий", "subtitle": "Читайте наши статьи.", "viewAll": "Все статьи →", "readMore": "Читать далее" },
+  "FaqSection": {
+    "title": "Часто задаваемые вопросы", "subtitle": "Общие вопросы", "description": "Есть вопросы? У нас есть ответы.",
+    "q1": "Как найти дешевые билеты?", "a1": "Мы сравниваем цены в реальном времени.",
+    "q2": "Есть ли скрытые сборы?", "a2": "Нет, FlightChap бесплатен.",
+    "q3": "Могу ли я изменить рейс?", "a3": "Зависит от авиакомпании.",
+    "q4": "Как работают горящие предложения?", "a4": "Билеты со скидкой на короткое время."
+  },
+  "Footer": {
+    "aboutUs": "О нас", "contact": "Контакты", "privacyPolicy": "Конфиденциальность", "termsOfService": "Условия", "allRightsReserved": "Все права защищены.",
+    "description": "Ваш спутник в путешествиях.", "topDestinations": "Направления",
+    "flightsNewYork": "Билеты в Нью-Йорк", "flightsLondon": "Билеты в Лондон", "flightsDubai": "Билеты в Дубай", "flightsTokyo": "Билеты в Токио", "flightsParis": "Билеты в Париж",
+    "company": "Компания", "helpCenter": "Центр помощи", "contactUs": "Контакты", "cookiePolicy": "Куки",
+    "subscribeTitle": "Подпишитесь на секретные скидки!", "subscribeDesc": "Скидки только для подписчиков.", "placeholderEmail": "Ваш email", "btnSubscribe": "Подписаться"
+  },
+  "Support": {
+    "heroTitle": "Как мы можем помочь?", "heroSubtitle": "Ищите по статьям.", "searchPlaceholder": "Поиск статей...",
+    "categoriesTitle": "Темы", "catBookings": "Бронирования", "catBookingsDesc": "Управление бронью.", "catCancellations": "Отмены", "catCancellationsDesc": "Как отменить.",
+    "catBaggage": "Багаж", "catBaggageDesc": "Правила багажа.", "catAccount": "Аккаунт", "catAccountDesc": "Настройки.", "catTechnical": "Техподдержка", "catTechnicalDesc": "Проблемы сайта.",
+    "catEsim": "e-SIM поддержка", "catEsimDesc": "Инструкции.", "contactTitle": "Нужна помощь?", "contactSubtitle": "Поддержка 24/7.",
+    "btnChat": "Онлайн Чат", "btnCall": "Позвонить", "btnEmail": "Написать Email", "faqTitle": "Часто задаваемые вопросы",
+    "faq1Q": "Как долго идет возврат?", "faq1A": "Обычно 5-10 дней.", "faq2Q": "Можно ли передать билет?", "faq2A": "Обычно нет.",
+    "faq3Q": "Как активировать e-SIM?", "faq3A": "Отсканируйте QR код."
+  },
+  "MemberDeals": {
+    "vipClub": "Только для участников", "title": "Эксклюзивные предложения", "subtitle": "Секретные цены для вас.",
+    "btnUnlock": "Открыть скидку", "btnSignIn": "Войти", "signUpToUnlock": "Регистрация"
+  },
+  "Profile": {
+    "title": "Мой аккаунт", "tabProfile": "Настройки", "tabSaved": "Сохраненные", "tabAlerts": "Уведомления", "tabPromos": "Промокоды", "logout": "Выйти",
+    "savedTitle": "Сохраненные", "savedSubtitle": "Чтобы посмотреть позже.", "alertsTitle": "Уведомления", "alertsSubtitle": "Сообщим о снижении цены.",
+    "promosTitle": "Промокоды", "promosSubtitle": "Используйте для скидки.", "btnCopy": "Копировать"
+  },
+  "About": {
+    "title": "Ваш первый выбор для путешествий.", "subtitle": "Надежная поисковая система.", "missionTitle": "Наша миссия",
+    "p1": "Мы сравниваем без скрытых сборов.", "p2": "Упрощаем поиск с технологиями.", "p3": "Используем ИИ.",
+    "whyChooseUs": "Почему мы?", "w1Title": "Лучшие цены", "w1Desc": "Сравниваем сотни сайтов.", "w2Title": "100% Прозрачно", "w2Desc": "Никаких скрытых сборов.", "w3Title": "ИИ Технологии", "w3Desc": "Умные алгоритмы.",
+    "valuesTitle": "Наши ценности", "v1Title": "Постоянное развитие", "v1Desc": "Открыты новому.", "v2Title": "Технологии в основе", "v2Desc": "Применение ИИ.", "v3Title": "Страсть", "v3Desc": "Нестандартное мышление.",
+    "statsTitle": "Статистика", "s1Title": "Языки", "s1Desc": "Более 30 языков.", "s2Title": "Пользователи", "s2Desc": "Миллионы людей.", "s3Title": "Страны", "s3Desc": "Работаем в 190 странах.", "s4Title": "Партнеры", "s4Desc": "Сотни платформ."
+  },
+  "VIPPromo": { "title": "VIP Клуб", "subtitle": "Эксклюзивные скидки." }
+}

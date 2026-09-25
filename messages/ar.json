@@ -1,1 +1,71 @@
-{"Navbar":{"home":"الرئيسية","support":"الدعم","myBookings":"حجوزاتي","signIn":"دخول","aboutUs":"عنا","contactUs":"اتصل بنا"},"HeroSearch":{"whereTo":"إلى أين؟","searchFlights":"بحث","roundTrip":"ذهاب وعودة","oneWay":"ذهاب فقط","multiCity":"مدن متعددة","economy":"اقتصادية","premiumEconomy":"اقتصادية ممتازة","business":"أعمال","firstClass":"أولى","passengers":"ركاب","adults":"بالغين","adultsDesc":"+12","children":"أطفال","childrenDesc":"2-11","infants":"رُضّع","infantsDesc":"-2","from":"من","to":"إلى","depart":"مغادرة","return":"عودة","search":"بحث","tabFlights":"رحلات","tabRentals":"إيجار","tabTransfers":"نقل","tabEsim":"e-SIM"},"Destinations":{"title":"وجهات","subtitle":"وجهات شهيرة","subtitleExtended":"عروض رائعة.","tabCountries":"دول","tabCities":"مدن","bestTime":"وقت:","startingFrom":"من:","explore":"استكشف"},"FlashDeals":{"title":"عروض سريعة","subtitle":"عروض حصرية","viewAll":"الجميع","viewAllMobile":"الجميع","bookNow":"احجز","expired":"منتهي","endingSoon":"ينتهي قريبا","checkDeal":"عرض","noDeals":"لا توجد عروض"},"BlogPreview":{"title":"نصائح السفر","subtitle":"أحدث المقالات.","viewAll":"المقالات","readMore":"المزيد"},"FaqSection":{"title":"أسئلة","subtitle":"شائعة","description":"لدينا إجابات.","q1":"أرخص رحلة؟","a1":"نقارن الأسعار.","q2":"رسوم خفية؟","a2":"لا.","q3":"إلغاء الرحلة؟","a3":"حسب الشركة.","q4":"عروض سريعة؟","a4":"وقت محدود."},"Footer":{"aboutUs":"عنا","contact":"اتصال","privacyPolicy":"الخصوصية","termsOfService":"الشروط","allRightsReserved":"حقوق محفوظة.","description":"رفيق السفر.","topDestinations":"وجهات","flightsNewYork":"نيويورك","flightsLondon":"لندن","flightsDubai":"دبي","flightsTokyo":"طوكيو","flightsParis":"باريس","company":"الشركة","helpCenter":"المساعدة","contactUs":"اتصل","cookiePolicy":"ملفات الارتباط","subscribeTitle":"اشترك!","subscribeDesc":"أسعار حصرية.","placeholderEmail":"بريدك","btnSubscribe":"اشترك"},"Support":{"heroTitle":"مساعدة؟","heroSubtitle":"ابحث.","searchPlaceholder":"بحث...","categoriesTitle":"تصفح","catBookings":"الحجوزات","catBookingsDesc":"إدارة.","catCancellations":"الإلغاء","catCancellationsDesc":"تعديل.","catBaggage":"الأمتعة","catBaggageDesc":"أوزان.","catAccount":"الحساب","catAccountDesc":"ملف.","catTechnical":"الدعم","catTechnicalDesc":"مشاكل.","catEsim":"e-SIM","catEsimDesc":"إعداد.","contactTitle":"مساعدة؟","contactSubtitle":"متاح 24/7.","btnChat":"محادثة","btnCall":"اتصل","btnEmail":"راسلنا","faqTitle":"أسئلة","faq1Q":"مدة الاسترداد؟","faq1A":"5-10 أيام.","faq2Q":"نقل تذكرة؟","faq2A":"لا.","faq3Q":"تفعيل الشريحة؟","faq3A":"امسح الرمز."},"MemberDeals":{"vipClub":"VIP","title":"خصومات","subtitle":"عروض سفر.","btnUnlock":"افتح","btnSignIn":"دخول","signUpToUnlock":"سجل"},"Profile":{"title":"حسابي","tabProfile":"إعدادات","tabSaved":"محفوظة","tabAlerts":"تنبيهات","tabPromos":"رموز","logout":"خروج","savedTitle":"العروض","savedSubtitle":"مفضلة.","alertsTitle":"تنبيهات","alertsSubtitle":"أسعار.","promosTitle":"خصم","promosSubtitle":"استخدمها.","btnCopy":"نسخ"},"About":{"title":"الأول للسفر.","subtitle":"محرك البحث.","missionTitle":"مهمتنا","p1":"ملايين العروض.","p2":"تبسيط السفر.","p3":"نستخدم الذكاء الاصطناعي.","whyChooseUs":"لماذا؟","w1Title":"أفضل الأسعار","w1Desc":"نقارن مئات.","w2Title":"شفافية","w2Desc":"لا رسوم خفية.","w3Title":"ذكاء اصطناعي","w3Desc":"خوارزميات.","valuesTitle":"قيمنا","v1Title":"نتعلم","v1Desc":"لدينا شغف.","v2Title":"التقنية","v2Desc":"أساسنا.","v3Title":"الريادة","v3Desc":"نحن نبتكر.","statsTitle":"أرقام","s1Title":"لغات","s1Desc":"30 لغة.","s2Title":"مستخدمين","s2Desc":"ملايين.","s3Title":"دول","s3Desc":"190 دولة.","s4Title":"شركاء","s4Desc":"مئات المنصات."},"VIPPromo":{"title":"VIP","subtitle":"خصومات حصرية."}}
+{
+  "Navbar": { "home": "الرئيسية", "support": "الدعم", "myBookings": "حجوزاتي", "signIn": "تسجيل الدخول", "aboutUs": "من نحن", "contactUs": "اتصل بنا" },
+  "HeroSearch": {
+    "whereTo": "إلى أين؟", "searchFlights": "البحث عن رحلات", "roundTrip": "ذهاب وعودة", "oneWay": "ذهاب فقط", "multiCity": "مدن متعددة",
+    "economy": "اقتصادية", "premiumEconomy": "اقتصادية ممتازة", "business": "أعمال", "firstClass": "درجة أولى", "passengers": "المسافرون",
+    "from": "من", "to": "إلى", "depart": "ذهاب", "return": "عودة", "adults": "بالغون", "children": "أطفال", "infants": "رُضّع",
+    "tabFlights": "رحلات طيران", "tabFlightsTitle": "ابحث عن رحلتك القادمة", "tabFlightsSubtitle": "قارن رحلات الطيران الرخيصة.",
+    "tabRental": "تأجير سيارات", "tabRentalTitle": "مركبة لرحلتك", "tabRentalSubtitle": "استأجر سيارات بأفضل سعر.",
+    "tabTransfers": "نقل", "tabTransfersTitle": "بدون متاعب للمطار", "tabTransfersSubtitle": "احجز سيارات أجرة موثوقة.",
+    "tabEsim": "شريحة إلكترونية", "tabEsimTitle": "ابق متصلاً", "tabEsimSubtitle": "إنترنت فوري مع e-SIM.",
+    "labelFrom": "من", "labelTo": "إلى", "labelDates": "التواريخ", "labelPassengers": "المسافرون", "labelVehicle": "المركبة",
+    "labelPickUp": "استلام", "labelDropOff": "تسليم", "labelDateTime": "التاريخ والوقت", "labelDestination": "الوجهة", "labelDuration": "المدة", "labelDataPackage": "باقة البيانات",
+    "placeholderCityAirport": "مدينة أو مطار", "placeholderDepartReturn": "ذهاب - عودة", "placeholderCityAddress": "مدينة أو عنوان",
+    "placeholderPickUpDropOff": "استلام - تسليم", "placeholderAirportHotel": "مطار أو فندق", "placeholderHotelAddress": "فندق أو عنوان",
+    "placeholderPickUpTime": "وقت الاستلام", "placeholderWhereTo": "إلى أين تسافر؟",
+    "btnSearchFlights": "بحث الرحلات", "btnFindVehicles": "ابحث عن مركبات", "btnSearchTransfers": "بحث المواصلات", "btnFindEsims": "بحث عن شرائح",
+    "opt1AdultEconomy": "1 بالغ، اقتصادية", "optAnyVehicle": "أي مركبة", "optEconomyCar": "سيارة اقتصادية", "optSUV": "عائلية", "optMotorbike": "دراجة نارية",
+    "opt2Passengers": "2 مسافرين", "opt7Days": "7 أيام", "opt15Days": "15 يوماً", "opt30Days": "30 يوماً", "opt3GB": "3 غيغابايت", "opt5GB": "5 غيغابايت", "opt10GB": "10 غيغابايت", "optUnlimited": "غير محدود"
+  },
+  "RecentViews": { "recentSearches": "عمليات البحث الأخيرة", "viewAgain": "عرض مرة أخرى", "title": "الأشياء التي بحثت عنها" },
+  "TopDestinations": {
+    "title": "وجهات شهيرة", "subtitle": "استكشف الأماكن الشهيرة", "flightsFrom": "رحلات تبدأ من", "subtitleExtended": "استكشف أفضل الدول.",
+    "tabCountries": "الدول", "tabCities": "المدن", "reviews": "التقييمات", "showLess": "[ عرض أقل ]", "readMore": "[ اقرأ المزيد... ]",
+    "bestTime": "أفضل وقت:", "startingFrom": "ابتداءً من", "perNight": "/ لليلة", "findFlights": "البحث عن رحلات", "topAttractions": "أبرز المعالم"
+  },
+  "FlashDeals": {
+    "title": "⚡ عروض الفلاش", "subtitle": "اغتنم هذه العروض!", "viewAll": "عرض الكل →", "viewAllMobile": "عرض الكل",
+    "bookNow": "احجز الآن", "expired": "انتهى", "endingSoon": "ينتهي قريباً", "checkDeal": "تحقق من العرض", "noDeals": "لا توجد عروض حالياً."
+  },
+  "BlogPreview": { "title": "أحدث النصائح", "subtitle": "اقرأ مقالاتنا.", "viewAll": "عرض الكل →", "readMore": "اقرأ المزيد" },
+  "FaqSection": {
+    "title": "الأسئلة الشائعة", "subtitle": "استفسارات عامة", "description": "لديك أسئلة؟ لدينا إجابات.",
+    "q1": "كيف أجد أرخص الرحلات؟", "a1": "نقارن الأسعار في الوقت الفعلي.",
+    "q2": "هل توجد رسوم خفية؟", "a2": "لا، خدمتنا مجانية.",
+    "q3": "هل يمكنني تغيير رحلتي؟", "a3": "يعتمد على شركة الطيران.",
+    "q4": "كيف تعمل عروض الفلاش؟", "a4": "رحلات مخفضة لفترة محدودة."
+  },
+  "Footer": {
+    "aboutUs": "من نحن", "contact": "اتصل", "privacyPolicy": "الخصوصية", "termsOfService": "الشروط", "allRightsReserved": "جميع الحقوق محفوظة.",
+    "description": "رفيق سفرك.", "topDestinations": "الوجهات",
+    "flightsNewYork": "رحلات إلى نيويورك", "flightsLondon": "رحلات إلى لندن", "flightsDubai": "رحلات إلى دبي", "flightsTokyo": "رحلات إلى طوكيو", "flightsParis": "رحلات إلى باريس",
+    "company": "الشركة", "helpCenter": "مركز المساعدة", "contactUs": "اتصل بنا", "cookiePolicy": "سياسة ملفات الارتباط",
+    "subscribeTitle": "اشترك للحصول على عروض!", "subscribeDesc": "أسعار حصرية للأعضاء.", "placeholderEmail": "بريدك الإلكتروني", "btnSubscribe": "اشتراك"
+  },
+  "Support": {
+    "heroTitle": "كيف يمكننا مساعدتك؟", "heroSubtitle": "ابحث أو تصفح.", "searchPlaceholder": "البحث في المقالات...",
+    "categoriesTitle": "تصفح حسب الموضوع", "catBookings": "الحجوزات", "catBookingsDesc": "إدارة حجوزاتك.", "catCancellations": "الإلغاءات", "catCancellationsDesc": "كيفية تغيير الرحلات.",
+    "catBaggage": "الأمتعة", "catBaggageDesc": "حدود الأمتعة.", "catAccount": "الحساب", "catAccountDesc": "إدارة الملف الشخصي.", "catTechnical": "الدعم الفني", "catTechnicalDesc": "مشاكل الموقع.",
+    "catEsim": "دعم e-SIM", "catEsimDesc": "أدلة الإعداد.", "contactTitle": "بحاجة للمساعدة؟", "contactSubtitle": "دعم على مدار الساعة.",
+    "btnChat": "محادثة", "btnCall": "اتصل بنا", "btnEmail": "بريد إلكتروني", "faqTitle": "الأسئلة الشائعة",
+    "faq1Q": "كم يستغرق الاسترداد؟", "faq1A": "5-10 أيام عمل.", "faq2Q": "هل يمكن نقل التذكرة؟", "faq2A": "غالباً لا يُسمح.",
+    "faq3Q": "كيف أفعل الشريحة؟", "faq3A": "امسح رمز الاستجابة السريعة."
+  },
+  "MemberDeals": {
+    "vipClub": "الأعضاء فقط", "title": "عروض حصرية", "subtitle": "أسعار سرية.",
+    "btnUnlock": "فتح العرض", "btnSignIn": "تسجيل الدخول", "signUpToUnlock": "سجل الآن"
+  },
+  "Profile": {
+    "title": "حسابي", "tabProfile": "الإعدادات", "tabSaved": "المحفوظة", "tabAlerts": "التنبيهات", "tabPromos": "كوبونات", "logout": "تسجيل خروج",
+    "savedTitle": "العروض المحفوظة", "savedSubtitle": "لوقت لاحق.", "alertsTitle": "تنبيهات الأسعار", "alertsSubtitle": "سنعلمك عند انخفاض السعر.",
+    "promosTitle": "رموز الخصم", "promosSubtitle": "استخدم هذه الرموز.", "btnCopy": "نسخ"
+  },
+  "About": {
+    "title": "خيارك الأول.", "subtitle": "محرك بحث السفر.", "missionTitle": "مهمتنا",
+    "p1": "نقارن بدون رسوم مخفية.", "p2": "نبسط البحث بالتكنولوجيا.", "p3": "نستخدم الذكاء الاصطناعي.",
+    "whyChooseUs": "لماذا نحن؟", "w1Title": "أفضل الأسعار", "w1Desc": "نقارن مئات المواقع.", "w2Title": "شفافية", "w2Desc": "بدون رسوم خفية.", "w3Title": "الذكاء الاصطناعي", "w3Desc": "خوارزميات ذكية.",
+    "valuesTitle": "قيمنا", "v1Title": "التعلم دائماً", "v1Desc": "منفتحون للأفكار.", "v2Title": "التكنولوجيا", "v2Desc": "استخدام الذكاء الاصطناعي.", "v3Title": "الشغف", "v3Desc": "التفكير الإبداعي.",
+    "statsTitle": "إحصائيات", "s1Title": "اللغات", "s1Desc": "أكثر من 30 لغة.", "s2Title": "المستخدمون", "s2Desc": "ملايين المستخدمين.", "s3Title": "الدول", "s3Desc": "نشط في 190 دولة.", "s4Title": "الشركاء", "s4Desc": "مئات المنصات."
+  },
+  "VIPPromo": { "title": "نادي كبار الشخصيات", "subtitle": "خصومات حصرية." }
+}

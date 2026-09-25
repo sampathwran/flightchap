@@ -1,78 +1,36 @@
 const fs = require('fs');
-const path = require('path');
+let file = 'components/layout/Navbar.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-const navbarPath = path.join(__dirname, 'components/layout/Navbar.tsx');
-let code = fs.readFileSync(navbarPath, 'utf8');
-
-// Imports
-code = code.replace(
-  "import { Plane, User, Menu, Globe, Headphones, Briefcase } from 'lucide-react';",
-  "import { Plane, User, Menu, Globe, Headphones, Briefcase } from 'lucide-react';\nimport { useTranslations } from 'next-intl';\nimport { Link, usePathname, useRouter } from '@/i18n/routing';\nimport { useLocale } from 'next-intl';"
+// 1. Remove Deals and Vehicles from Desktop Menu
+content = content.replace(
+  /<Link href="\/deals" className="hover:text-blue-200 transition">Deals<\/Link>\s*<Link href="\/vehicles" className="hover:text-blue-200 transition">Vehicles<\/Link>/g,
+  ""
 );
 
-// We need to remove the native next/link import if we imported custom Link
-code = code.replace("import Link from 'next/link';\n", "");
-
-// Add useTranslations hook
-code = code.replace(
-  "export default function Navbar() {",
-  `export default function Navbar() {
-  const t = require('next-intl').useTranslations('Navbar');
-  const locale = require('next-intl').useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const switchLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
-    router.replace(pathname, { locale: nextLocale });
-  };
-`
+// 2. Remove Deals and Vehicles from Mobile Menu
+content = content.replace(
+  /<Link href="\/deals" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">Deals<\/Link>\s*<Link href="\/vehicles" className="block px-3 py-2 rounded-md font-medium text-lg hover:text-blue-600 hover:bg-slate-50 transition">Vehicles<\/Link>/g,
+  ""
 );
 
-// Replace texts
-code = code.replace(/>Home<\/Link>/, ">{t('home')}</Link>");
-code = code.replace(/>\s*Support\s*<\/Link>/, ">{t('support')}</Link>");
-code = code.replace(/>\s*My Bookings\s*<\/Link>/, ">{t('myBookings')}</Link>");
-code = code.replace(/>\s*Sign In\s*<\/button>/, ">{t('signIn')}</button>");
+// 3. Extract the Language Selector
+const langSelectorRegex = /<div className="flex items-center gap-1 hover:text-blue-200 transition">\s*<Globe className="h-4 w-4" \/>\s*<select[\s\S]*?<\/select>\s*<\/div>/;
+const langSelectorMatch = content.match(langSelectorRegex);
+let langSelectorStr = '';
 
-// Add Locale Switcher Dropdown replacing the "USD | EN" button
-const localeSwitcher = `
-            <div className="flex items-center gap-1 hover:text-blue-200 transition">
-              <Globe className="h-4 w-4" />
-              <select 
-                value={locale} 
-                onChange={switchLocale}
-                className="bg-transparent text-white font-medium text-sm border-none outline-none cursor-pointer drop-shadow-md appearance-none"
-              >
-                <option value="en" className="text-black">EN</option>
-                <option value="si" className="text-black">SI</option>
-                <option value="es" className="text-black">ES</option>
-                <option value="fr" className="text-black">FR</option>
-                <option value="de" className="text-black">DE</option>
-                <option value="zh" className="text-black">ZH</option>
-                <option value="ar" className="text-black">AR</option>
-                <option value="hi" className="text-black">HI</option>
-                <option value="ru" className="text-black">RU</option>
-                <option value="pt" className="text-black">PT</option>
-                <option value="ja" className="text-black">JA</option>
-                <option value="ko" className="text-black">KO</option>
-                <option value="it" className="text-black">IT</option>
-                <option value="nl" className="text-black">NL</option>
-                <option value="tr" className="text-black">TR</option>
-              </select>
-            </div>
-`;
-code = code.replace(
-  /<button className="flex items-center gap-1 hover:text-blue-200 transition">\s*<Globe className="h-4 w-4" \/>\s*<span>USD \| EN<\/span>\s*<\/button>/,
-  localeSwitcher
+if (langSelectorMatch) {
+  langSelectorStr = langSelectorMatch[0];
+  // Remove it from the original location
+  content = content.replace(langSelectorRegex, "");
+}
+
+// 4. Insert the Language Selector before User Actions
+const userActionsRegex = /<div className="hidden md:flex items-center space-x-4">/;
+content = content.replace(
+  userActionsRegex,
+  `<div className="hidden md:flex items-center space-x-4">\n            ${langSelectorStr}`
 );
 
-// Also replace the mobile menu versions
-code = code.replace(/<span className="font-medium text-lg text-slate-800">USD \| EN<\/span>/, `<span className="font-medium text-lg text-slate-800">Language: {locale.toUpperCase()}</span>`);
-code = code.replace(/>Home<\/Link>/g, ">{t('home')}</Link>"); // Catch any remaining
-code = code.replace(/>Support<\/Link>/g, ">{t('support')}</Link>");
-code = code.replace(/>My Bookings<\/Link>/g, ">{t('myBookings')}</Link>");
-code = code.replace(/>Sign In<\/button>/g, ">{t('signIn')}</button>");
-
-fs.writeFileSync(navbarPath, code);
-console.log('Navbar updated for i18n');
+fs.writeFileSync(file, content, 'utf8');
+console.log('Updated Navbar layout');

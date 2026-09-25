@@ -1,1 +1,71 @@
-{"Navbar":{"home":"首页","support":"支持","myBookings":"我的预订","signIn":"登录","aboutUs":"关于我们","contactUs":"联系我们"},"HeroSearch":{"whereTo":"去哪里？","searchFlights":"搜索航班","roundTrip":"往返","oneWay":"单程","multiCity":"多城市","economy":"经济舱","premiumEconomy":"高端经济舱","business":"商务舱","firstClass":"头等舱","passengers":"乘客","adults":"成人","adultsDesc":"12岁以上","children":"儿童","childrenDesc":"2-11岁","infants":"婴儿","infantsDesc":"2岁以下","from":"出发地","to":"目的地","depart":"去程","return":"返程","search":"搜索","tabFlights":"航班","tabRentals":"租车","tabTransfers":"接送","tabEsim":"e-SIM"},"Destinations":{"title":"热门目的地","subtitle":"探索预订最多的目的地","subtitleExtended":"找到超值优惠。","tabCountries":"国家","tabCities":"城市","bestTime":"最佳时间:","startingFrom":"起价:","explore":"探索"},"FlashDeals":{"title":"限时特价","subtitle":"抓住优惠！","viewAll":"查看所有","viewAllMobile":"查看所有","bookNow":"立即预订","expired":"已过期","endingSoon":"即将结束","checkDeal":"查看优惠","noDeals":"未找到优惠"},"BlogPreview":{"title":"最新旅游提示","subtitle":"阅读我们的最新文章。","viewAll":"查看所有","readMore":"阅读更多"},"FaqSection":{"title":"常见问题","subtitle":"常见查询","description":"有疑问吗？","q1":"如何找到便宜的航班？","a1":"比较数百家公司。","q2":"有隐藏费用吗？","a2":"没有。","q3":"可以取消航班吗？","a3":"取决于航空公司。","q4":"特价如何运作？","a4":"限时高折扣航班。"},"Footer":{"aboutUs":"关于我们","contact":"联系","privacyPolicy":"隐私政策","termsOfService":"服务条款","allRightsReserved":"保留所有权利。","description":"旅行伙伴。","topDestinations":"热门目的地","flightsNewYork":"飞往纽约","flightsLondon":"飞往伦敦","flightsDubai":"飞往迪拜","flightsTokyo":"飞往东京","flightsParis":"飞往巴黎","company":"公司","helpCenter":"帮助","contactUs":"联系我们","cookiePolicy":"Cookie","subscribeTitle":"订阅优惠！","subscribeDesc":"独家价格。","placeholderEmail":"电子邮件","btnSubscribe":"订阅"},"Support":{"heroTitle":"有什么帮助？","heroSubtitle":"搜索。","searchPlaceholder":"搜索...","categoriesTitle":"浏览","catBookings":"预订与付款","catBookingsDesc":"管理预订。","catCancellations":"更改与取消","catCancellationsDesc":"修改航班。","catBaggage":"行李","catBaggageDesc":"限额。","catAccount":"帐户","catAccountDesc":"管理。","catTechnical":"技术支持","catTechnicalDesc":"故障排除。","catEsim":"e-SIM","catEsimDesc":"指南。","contactTitle":"需要帮助？","contactSubtitle":"24/7服务。","btnChat":"聊天","btnCall":"致电","btnEmail":"电子邮件","faqTitle":"常见问题","faq1Q":"退款多久？","faq1A":"5-10天。","faq2Q":"可转让吗？","faq2A":"不。","faq3Q":"如何激活e-SIM？","faq3A":"扫描二维码。"},"MemberDeals":{"vipClub":"VIP俱乐部","title":"会员折扣","subtitle":"解锁优惠。","btnUnlock":"解锁","btnSignIn":"登录","signUpToUnlock":"注册"},"Profile":{"title":"我的帐户","tabProfile":"个人资料","tabSaved":"保存的优惠","tabAlerts":"票价提醒","tabPromos":"促销代码","logout":"退出","savedTitle":"保存的优惠","savedSubtitle":"优惠。","alertsTitle":"降价提醒","alertsSubtitle":"通知您。","promosTitle":"促销代码","promosSubtitle":"使用代码。","btnCopy":"复制"},"About":{"title":"FlightChap","subtitle":"搜索引擎。","missionTitle":"我们的使命","p1":"汇总优惠。","p2":"简化比较。","p3":"使用AI。","whyChooseUs":"为什么选择？","w1Title":"无与伦比的价格","w1Desc":"比较数百个网站。","w2Title":"透明","w2Desc":"无隐藏费用。","w3Title":"AI驱动","w3Desc":"智能算法。","valuesTitle":"价值观","v1Title":"学习","v1Desc":"保持好奇心。","v2Title":"技术","v2Desc":"解决问题。","v3Title":"激情","v3Desc":"挑战现状。","statsTitle":"数字统计","s1Title":"本地化网站","s1Desc":"30多种语言。","s2Title":"月活跃用户","s2Desc":"数百万人。","s3Title":"国家","s3Desc":"190个国家。","s4Title":"合作伙伴","s4Desc":"比较数百个平台。"},"VIPPromo":{"title":"VIP俱乐部","subtitle":"会员折扣。"}}
+{
+  "Navbar": { "home": "首页", "support": "帮助支持", "myBookings": "我的行程", "signIn": "登录", "aboutUs": "关于我们", "contactUs": "联系我们" },
+  "HeroSearch": {
+    "whereTo": "去哪里？", "searchFlights": "搜索航班", "roundTrip": "往返", "oneWay": "单程", "multiCity": "多地",
+    "economy": "经济舱", "premiumEconomy": "超极经济舱", "business": "商务舱", "firstClass": "头等舱", "passengers": "乘客",
+    "from": "出发地", "to": "目的地", "depart": "出发日期", "return": "返程日期", "adults": "成人", "children": "儿童", "infants": "婴儿",
+    "tabFlights": "航班", "tabFlightsTitle": "开启下一段旅程", "tabFlightsSubtitle": "比较全球航空公司的特价机票。",
+    "tabRental": "租车", "tabRentalTitle": "租车服务", "tabRentalSubtitle": "为您提供最优惠的租车。",
+    "tabTransfers": "接送机", "tabTransfersTitle": "轻松前往机场", "tabTransfersSubtitle": "预订可靠的机场接送服务。",
+    "tabEsim": "e-SIM", "tabEsimTitle": "随时保持网络连接", "tabEsimSubtitle": "购买e-SIM，立享极速网络。",
+    "labelFrom": "出发地", "labelTo": "目的地", "labelDates": "日期", "labelPassengers": "乘客", "labelVehicle": "车型",
+    "labelPickUp": "取车", "labelDropOff": "还车", "labelDateTime": "时间", "labelDestination": "目的地", "labelDuration": "时长", "labelDataPackage": "流量套餐",
+    "placeholderCityAirport": "城市或机场", "placeholderDepartReturn": "出发 - 返程", "placeholderCityAddress": "城市或地址",
+    "placeholderPickUpDropOff": "取车 - 还车", "placeholderAirportHotel": "机场或酒店", "placeholderHotelAddress": "酒店或地址",
+    "placeholderPickUpTime": "取车时间", "placeholderWhereTo": "去哪里？",
+    "btnSearchFlights": "搜索航班", "btnFindVehicles": "查找租车", "btnSearchTransfers": "查找接送机", "btnFindEsims": "查找e-SIM",
+    "opt1AdultEconomy": "1 成人, 经济舱", "optAnyVehicle": "不限车型", "optEconomyCar": "经济型", "optSUV": "SUV", "optMotorbike": "摩托车",
+    "opt2Passengers": "2 乘客", "opt7Days": "7 天", "opt15Days": "15 天", "opt30Days": "30 天", "opt3GB": "3 GB", "opt5GB": "5 GB", "opt10GB": "10 GB", "optUnlimited": "无限流量"
+  },
+  "RecentViews": { "recentSearches": "最近搜索", "viewAgain": "再次查看", "title": "您最近的搜索" },
+  "TopDestinations": {
+    "title": "热门目的地", "subtitle": "探索热门景点", "flightsFrom": "机票起价", "subtitleExtended": "探索世界各地的国家和城市。",
+    "tabCountries": "国家", "tabCities": "城市", "reviews": "评论", "showLess": "[ 收起 ]", "readMore": "[ 查看更多... ]",
+    "bestTime": "最佳旅游时间：", "startingFrom": "起价", "perNight": "/ 每晚", "findFlights": "查找航班", "topAttractions": "热门景点"
+  },
+  "FlashDeals": {
+    "title": "⚡ 限时特惠", "subtitle": "限时折扣，抓紧预订！", "viewAll": "查看全部特惠 →", "viewAllMobile": "查看全部",
+    "bookNow": "立即预订", "expired": "已过期", "endingSoon": "即将结束", "checkDeal": "查看优惠", "noDeals": "当前没有活动。"
+  },
+  "BlogPreview": { "title": "旅游攻略", "subtitle": "阅读最新的旅游指南。", "viewAll": "查看全部 →", "readMore": "阅读更多" },
+  "FaqSection": {
+    "title": "常见问题", "subtitle": "常规问题", "description": "有疑问吗？为您解答。",
+    "q1": "如何找到最便宜的机票？", "a1": "我们实时比较数百家网站的价格。",
+    "q2": "有隐藏费用吗？", "a2": "没有，完全免费，无任何隐藏费用。",
+    "q3": "我可以更改航班吗？", "a3": "取决于您预订的航空公司。",
+    "q4": "限时特惠是什么？", "a4": "限时极低折扣的特价机票。"
+  },
+  "Footer": {
+    "aboutUs": "关于我们", "contact": "联系我们", "privacyPolicy": "隐私政策", "termsOfService": "服务条款", "allRightsReserved": "版权所有。",
+    "description": "您的全球旅游比价小助手。", "topDestinations": "目的地",
+    "flightsNewYork": "飞往纽约", "flightsLondon": "飞往伦敦", "flightsDubai": "飞往迪拜", "flightsTokyo": "飞往东京", "flightsParis": "飞往巴黎",
+    "company": "公司", "helpCenter": "帮助中心", "contactUs": "联系我们", "cookiePolicy": "Cookie政策",
+    "subscribeTitle": "订阅以获取内部特价！", "subscribeDesc": "会员专享独家折扣。", "placeholderEmail": "您的邮箱", "btnSubscribe": "订阅"
+  },
+  "Support": {
+    "heroTitle": "有什么我们可以帮您？", "heroSubtitle": "通过下方搜索或分类查看。", "searchPlaceholder": "搜索问题...",
+    "categoriesTitle": "主题分类", "catBookings": "预订与支付", "catBookingsDesc": "管理您的订单。", "catCancellations": "退改签", "catCancellationsDesc": "如何更改机票。",
+    "catBaggage": "行李服务", "catBaggageDesc": "行李额度和特殊物品。", "catAccount": "账户安全", "catAccountDesc": "管理账户。", "catTechnical": "技术支持", "catTechnicalDesc": "网站故障。",
+    "catEsim": "e-SIM支持", "catEsimDesc": "设置指南。", "contactTitle": "需要更多帮助？", "contactSubtitle": "我们提供24小时服务。",
+    "btnChat": "在线客服", "btnCall": "拨打电话", "btnEmail": "发送邮件", "faqTitle": "常见问题",
+    "faq1Q": "退款需要多久？", "faq1A": "通常需要5-10个工作日。", "faq2Q": "机票可以转让吗？", "faq2A": "大部分不支持转让。",
+    "faq3Q": "如何激活e-SIM？", "faq3A": "扫描邮件中的QR码。"
+  },
+  "MemberDeals": {
+    "vipClub": "会员专享", "title": "独家特惠", "subtitle": "会员专享隐藏低价。",
+    "btnUnlock": "解锁折扣", "btnSignIn": "登录解锁", "signUpToUnlock": "注册查看"
+  },
+  "Profile": {
+    "title": "我的账户", "tabProfile": "账户设置", "tabSaved": "我的收藏", "tabAlerts": "价格提醒", "tabPromos": "优惠码", "logout": "退出登录",
+    "savedTitle": "收藏的特价", "savedSubtitle": "留着下次看。", "alertsTitle": "降价提醒", "alertsSubtitle": "降价时我们会通知您。",
+    "promosTitle": "专属优惠码", "promosSubtitle": "结算时使用。", "btnCopy": "复制"
+  },
+  "About": {
+    "title": "您的首选旅行平台。", "subtitle": "您值得信赖的元搜索。", "missionTitle": "我们的使命",
+    "p1": "我们实时比价且没有隐藏费用。", "p2": "用科技简化旅行比价流程。", "p3": "利用人工智能提升用户体验。",
+    "whyChooseUs": "为什么选择我们？", "w1Title": "更低价格", "w1Desc": "一键对比数百个网站。", "w2Title": "100% 透明", "w2Desc": "所见即所得，无隐藏费用。", "w3Title": "AI 赋能", "w3Desc": "智能算法，路线更优。",
+    "valuesTitle": "核心价值观", "v1Title": "持续学习", "v1Desc": "拥抱新想法。", "v2Title": "技术驱动", "v2Desc": "运用AI和前沿技术。", "v3Title": "创业热情", "v3Desc": "不拘一格的思考方式。",
+    "statsTitle": "相关数据", "s1Title": "多种语言", "s1Desc": "支持超过30种语言。", "s2Title": "月活跃用户", "s2Desc": "帮助数以百万计的游客。", "s3Title": "服务覆盖", "s3Desc": "在190个国家可用。", "s4Title": "合作伙伴", "s4Desc": "连接上百家平台。"
+  },
+  "VIPPromo": { "title": "VIP俱乐部", "subtitle": "专属折扣，开启秘密优惠。" }
+}

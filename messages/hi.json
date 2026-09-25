@@ -1,1 +1,71 @@
-{"Navbar":{"home":"होम","support":"सहायता","myBookings":"बुकिंग","signIn":"लॉगिन","aboutUs":"हमारे बारे में","contactUs":"संपर्क"},"HeroSearch":{"whereTo":"कहाँ?","searchFlights":"उड़ानें खोजें","roundTrip":"राउंड ट्रिप","oneWay":"वन वे","multiCity":"मल्टी-सिटी","economy":"इकोनॉमी","premiumEconomy":"प्रीमियम","business":"बिजनेस","firstClass":"फर्स्ट क्लास","passengers":"यात्री","adults":"वयस्क","adultsDesc":"12+","children":"बच्चे","childrenDesc":"2-11","infants":"शिशु","infantsDesc":"-2","from":"से","to":"तक","depart":"प्रस्थान","return":"वापसी","search":"खोजें","tabFlights":"उड़ानें","tabRentals":"किराया","tabTransfers":"ट्रांसफर","tabEsim":"ई-सिम"},"Destinations":{"title":"लोकप्रिय गंतव्य","subtitle":"गंतव्यों का अन्वेषण करें","subtitleExtended":"शानदार सौदे।","tabCountries":"देश","tabCities":"शहर","bestTime":"सबसे अच्छा समय:","startingFrom":"शुरुआत:","explore":"अन्वेषण"},"FlashDeals":{"title":"फ्लैश डील्स","subtitle":"विशेष सौदे!","viewAll":"सभी देखें","viewAllMobile":"सभी देखें","bookNow":"बुक करें","expired":"समाप्त","endingSoon":"जल्द समाप्त","checkDeal":"डील देखें","noDeals":"कोई डील नहीं"},"BlogPreview":{"title":"यात्रा युक्तियाँ","subtitle":"नवीनतम लेख।","viewAll":"सभी लेख","readMore":"और पढ़ें"},"FaqSection":{"title":"सामान्य प्रश्न","subtitle":"प्रश्न","description":"उत्तर हैं।","q1":"सस्ती उड़ानें?","a1":"कीमतों की तुलना।","q2":"छिपी हुई फीस?","a2":"नहीं।","q3":"उड़ान बदलें?","a3":"एयरलाइन पर निर्भर।","q4":"फ्लैश डील्स?","a4":"सीमित समय के लिए।"},"Footer":{"aboutUs":"हमारे बारे में","contact":"संपर्क","privacyPolicy":"गोपनीयता","termsOfService":"शर्तें","allRightsReserved":"सर्वाधिकार सुरक्षित।","description":"उड़ान सौदे।","topDestinations":"गंतव्य","flightsNewYork":"न्यूयॉर्क","flightsLondon":"लंदन","flightsDubai":"दुबई","flightsTokyo":"टोक्यो","flightsParis":"पेरिस","company":"कंपनी","helpCenter":"सहायता","contactUs":"संपर्क करें","cookiePolicy":"कुकी नीति","subscribeTitle":"सदस्यता लें!","subscribeDesc":"अनन्य मूल्य।","placeholderEmail":"अपना ईमेल","btnSubscribe":"सदस्यता"},"Support":{"heroTitle":"मदद?","heroSubtitle":"खोजें।","searchPlaceholder":"खोजें...","categoriesTitle":"ब्राउज़ करें","catBookings":"बुकिंग","catBookingsDesc":"प्रबंधित करें।","catCancellations":"रद्दीकरण","catCancellationsDesc":"संशोधित करें।","catBaggage":"सामान","catBaggageDesc":"सामान भत्ते।","catAccount":"खाता","catAccountDesc":"प्रोफ़ाइल।","catTechnical":"तकनीकी","catTechnicalDesc":"समस्या निवारण।","catEsim":"ई-सिम","catEsimDesc":"सेटअप।","contactTitle":"मदद चाहिए?","contactSubtitle":"24/7 उपलब्ध।","btnChat":"चैट","btnCall":"कॉल करें","btnEmail":"ईमेल करें","faqTitle":"सामान्य प्रश्न","faq1Q":"रिफंड समय?","faq1A":"5-10 दिन।","faq2Q":"टिकट स्थानांतरण?","faq2A":"नहीं।","faq3Q":"ई-सिम सक्रिय?","faq3A":"क्यूआर कोड स्कैन।"},"MemberDeals":{"vipClub":"VIP","title":"विशेष छूट","subtitle":"यात्रा सौदे।","btnUnlock":"अनलॉक करें","btnSignIn":"साइन इन करें","signUpToUnlock":"साइन अप करें"},"Profile":{"title":"मेरा खाता","tabProfile":"सेटिंग्स","tabSaved":"सहेजे गए","tabAlerts":"अलर्ट","tabPromos":"प्रोमो कोड","logout":"लॉग आउट","savedTitle":"सहेजे गए","savedSubtitle":"बुकमार्क।","alertsTitle":"अलर्ट","alertsSubtitle":"कीमतें कम।","promosTitle":"प्रोमो कोड","promosSubtitle":"कोड का उपयोग।","btnCopy":"कॉपी"},"About":{"title":"फ्लाइटचैप","subtitle":"सर्च इंजन।","missionTitle":"हमारा मिशन","p1":"लाखों सौदे।","p2":"यात्रा को सरल।","p3":"एआई का उपयोग।","whyChooseUs":"हमें क्यों चुनें?","w1Title":"बेहतरीन कीमतें","w1Desc":"साइटों की तुलना।","w2Title":"पारदर्शी","w2Desc":"कोई छिपी फीस नहीं।","w3Title":"एआई","w3Desc":"स्मार्ट एल्गोरिदम।","valuesTitle":"मूल्य","v1Title":"हम सीखते हैं","v1Desc":"तैयार हैं।","v2Title":"प्रौद्योगिकी","v2Desc":"समस्याओं को हल।","v3Title":"जुनून","v3Desc":"चुनौती देते हैं।","statsTitle":"आंकड़ों में","s1Title":"वेबसाइटें","s1Desc":"30 भाषाएँ।","s2Title":"उपयोगकर्ता","s2Desc":"लाखों।","s3Title":"देश","s3Desc":"190 देश।","s4Title":"साझेदार","s4Desc":"सैकड़ों प्लेटफार्म।"},"VIPPromo":{"title":"VIP","subtitle":"विशेष छूट।"}}
+{
+  "Navbar": { "home": "होम", "support": "समर्थन", "myBookings": "मेरी बुकिंग", "signIn": "साइन इन", "aboutUs": "हमारे बारे में", "contactUs": "संपर्क करें" },
+  "HeroSearch": {
+    "whereTo": "कहाँ जाना है?", "searchFlights": "फ्लाइट खोजें", "roundTrip": "आने-जाने का", "oneWay": "एक तरफ़ा", "multiCity": "मल्टी-सिटी",
+    "economy": "इकोनॉमी", "premiumEconomy": "प्रीमियम इकोनॉमी", "business": "बिजनेस", "firstClass": "प्रथम श्रेणी", "passengers": "यात्री",
+    "from": "कहाँ से", "to": "कहाँ तक", "depart": "प्रस्थान", "return": "वापसी", "adults": "वयस्क", "children": "बच्चे", "infants": "शिशु",
+    "tabFlights": "फ्लाइट्स", "tabFlightsTitle": "अपनी यात्रा खोजें", "tabFlightsSubtitle": "सस्ती उड़ानों की तुलना करें।",
+    "tabRental": "कार रेंटल", "tabRentalTitle": "यात्रा के लिए वाहन", "tabRentalSubtitle": "बेहतरीन कीमतों पर कार किराए पर लें।",
+    "tabTransfers": "ट्रांसफर", "tabTransfersTitle": "हवाई अड्डे के लिए आसान यात्रा", "tabTransfersSubtitle": "विश्वसनीय टैक्सी बुक करें।",
+    "tabEsim": "e-SIM", "tabEsimTitle": "हर जगह जुड़े रहें", "tabEsimSubtitle": "ई-सिम के साथ इंस्टेंट इंटरनेट।",
+    "labelFrom": "कहाँ से", "labelTo": "कहाँ तक", "labelDates": "तारीख", "labelPassengers": "यात्री", "labelVehicle": "वाहन",
+    "labelPickUp": "पिक-अप", "labelDropOff": "ड्रॉप-ऑफ़", "labelDateTime": "दिनांक और समय", "labelDestination": "मंजिल", "labelDuration": "अवधि", "labelDataPackage": "डेटा पैकेज",
+    "placeholderCityAirport": "शहर या एयरपोर्ट", "placeholderDepartReturn": "प्रस्थान - वापसी", "placeholderCityAddress": "शहर या पता",
+    "placeholderPickUpDropOff": "पिकअप - ड्रॉपऑफ़", "placeholderAirportHotel": "एयरपोर्ट या होटल", "placeholderHotelAddress": "होटल या पता",
+    "placeholderPickUpTime": "पिकअप समय", "placeholderWhereTo": "आप कहाँ जा रहे हैं?",
+    "btnSearchFlights": "फ्लाइट खोजें", "btnFindVehicles": "वाहन खोजें", "btnSearchTransfers": "ट्रांसफर खोजें", "btnFindEsims": "ई-सिम खोजें",
+    "opt1AdultEconomy": "1 वयस्क, इकोनॉमी", "optAnyVehicle": "कोई भी वाहन", "optEconomyCar": "इकोनॉमी कार", "optSUV": "एसयूवी", "optMotorbike": "मोटरसाइकिल",
+    "opt2Passengers": "2 यात्री", "opt7Days": "7 दिन", "opt15Days": "15 दिन", "opt30Days": "30 दिन", "opt3GB": "3 जीबी", "opt5GB": "5 जीबी", "opt10GB": "10 जीबी", "optUnlimited": "अनलिमिटेड"
+  },
+  "RecentViews": { "recentSearches": "हाल की खोजें", "viewAgain": "फिर से देखें", "title": "आपने हाल ही में खोजा" },
+  "TopDestinations": {
+    "title": "लोकप्रिय गंतव्य", "subtitle": "लोकप्रिय जगहें खोजें", "flightsFrom": "उड़ानें शुरू", "subtitleExtended": "दुनिया के बेहतरीन देश और शहर।",
+    "tabCountries": "देश", "tabCities": "शहर", "reviews": "समीक्षाएँ", "showLess": "[ कम दिखाएं ]", "readMore": "[ और पढ़ें... ]",
+    "bestTime": "सबसे अच्छा समय:", "startingFrom": "से शुरू", "perNight": "/ प्रति रात", "findFlights": "फ्लाइट खोजें", "topAttractions": "मुख्य आकर्षण"
+  },
+  "FlashDeals": {
+    "title": "⚡ फ्लैश डील", "subtitle": "ये ऑफर पकड़ें!", "viewAll": "सभी ऑफर देखें →", "viewAllMobile": "सभी देखें",
+    "bookNow": "अभी बुक करें", "expired": "समाप्त", "endingSoon": "जल्द समाप्त", "checkDeal": "ऑफर देखें", "noDeals": "कोई सक्रिय ऑफर नहीं है।"
+  },
+  "BlogPreview": { "title": "लेटेस्ट यात्रा टिप्स", "subtitle": "हमारे लेख पढ़ें।", "viewAll": "सभी देखें →", "readMore": "और पढ़ें" },
+  "FaqSection": {
+    "title": "अक्सर पूछे जाने वाले प्रश्न", "subtitle": "सामान्य प्रश्न", "description": "क्या आपके कोई प्रश्न हैं? हमारे पास उत्तर हैं।",
+    "q1": "सबसे सस्ती उड़ानें कैसे खोजें?", "a1": "हम वास्तविक समय में कीमतों की तुलना करते हैं।",
+    "q2": "क्या कोई छिपी हुई फीस है?", "a2": "नहीं, FlightChap पूरी तरह से मुफ़्त है।",
+    "q3": "क्या मैं अपनी उड़ान बदल सकता हूँ?", "a3": "यह एयरलाइन पर निर्भर करता है।",
+    "q4": "फ्लैश डील कैसे काम करती हैं?", "a4": "सीमित समय के लिए छूट वाली उड़ानें।"
+  },
+  "Footer": {
+    "aboutUs": "हमारे बारे में", "contact": "संपर्क", "privacyPolicy": "गोपनीयता", "termsOfService": "शर्तें", "allRightsReserved": "सभी अधिकार सुरक्षित।",
+    "description": "आपका यात्रा साथी।", "topDestinations": "गंतव्य",
+    "flightsNewYork": "न्यूयॉर्क की उड़ानें", "flightsLondon": "लंदन की उड़ानें", "flightsDubai": "दुबई की उड़ानें", "flightsTokyo": "टोक्यो की उड़ानें", "flightsParis": "पेरिस की उड़ानें",
+    "company": "कंपनी", "helpCenter": "सहायता केंद्र", "contactUs": "संपर्क करें", "cookiePolicy": "कुकी नीति",
+    "subscribeTitle": "विशेष डील के लिए सब्सक्राइब करें!", "subscribeDesc": "ईमेल पर विशेष कीमतें।", "placeholderEmail": "आपका ईमेल", "btnSubscribe": "सब्सक्राइब"
+  },
+  "Support": {
+    "heroTitle": "हम कैसे मदद कर सकते हैं?", "heroSubtitle": "खोजें या ब्राउज़ करें।", "searchPlaceholder": "लेख खोजें...",
+    "categoriesTitle": "विषय ब्राउज़ करें", "catBookings": "बुकिंग", "catBookingsDesc": "बुकिंग प्रबंधित करें।", "catCancellations": "रद्दीकरण", "catCancellationsDesc": "बदलने का तरीका।",
+    "catBaggage": "सामान", "catBaggageDesc": "सामान सीमा।", "catAccount": "खाता", "catAccountDesc": "प्रोफ़ाइल प्रबंधित करें।", "catTechnical": "तकनीकी सहायता", "catTechnicalDesc": "वेबसाइट की समस्याएं।",
+    "catEsim": "ई-सिम समर्थन", "catEsimDesc": "सेटअप गाइड।", "contactTitle": "मदद चाहिए?", "contactSubtitle": "24/7 सहायता।",
+    "btnChat": "लाइव चैट", "btnCall": "कॉल करें", "btnEmail": "ईमेल", "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+    "faq1Q": "रिफंड में कितना समय लगता है?", "faq1A": "5-10 कार्य दिवस।", "faq2Q": "क्या टिकट ट्रांसफर हो सकता है?", "faq2A": "आमतौर पर नहीं।",
+    "faq3Q": "ई-सिम कैसे एक्टिवेट करें?", "faq3A": "क्यूआर कोड स्कैन करें।"
+  },
+  "MemberDeals": {
+    "vipClub": "केवल सदस्यों के लिए", "title": "विशेष ऑफर", "subtitle": "सदस्यों के लिए गुप्त कीमतें।",
+    "btnUnlock": "ऑफर अनब्लॉक करें", "btnSignIn": "साइन इन करें", "signUpToUnlock": "साइन अप करें"
+  },
+  "Profile": {
+    "title": "मेरा खाता", "tabProfile": "सेटिंग्स", "tabSaved": "सहेजे गए", "tabAlerts": "अलर्ट", "tabPromos": "प्रोमो कोड", "logout": "लॉग आउट",
+    "savedTitle": "आपकी सेव की गई डील्स", "savedSubtitle": "बाद में देखने के लिए।", "alertsTitle": "कीमत अलर्ट", "alertsSubtitle": "कीमत कम होने पर बताएंगे।",
+    "promosTitle": "प्रोमो कोड", "promosSubtitle": "डिस्काउंट के लिए कोड उपयोग करें।", "btnCopy": "कॉपी करें"
+  },
+  "About": {
+    "title": "आपकी पहली पसंद।", "subtitle": "आपका यात्रा खोज इंजन।", "missionTitle": "हमारा मिशन",
+    "p1": "हम बिना छिपी फीस के तुलना करते हैं।", "p2": "प्रौद्योगिकी से यात्रा आसान बनाते हैं।", "p3": "एआई का उपयोग करते हैं।",
+    "whyChooseUs": "हमें क्यों चुनें?", "w1Title": "सर्वश्रेष्ठ मूल्य", "w1Desc": "सैकड़ों साइट्स की तुलना।", "w2Title": "100% पारदर्शी", "w2Desc": "कोई छिपी हुई फीस नहीं।", "w3Title": "एआई टेक्नोलॉजी", "w3Desc": "स्मार्ट एल्गोरिदम।",
+    "valuesTitle": "हमारे मूल्य", "v1Title": "हमेशा सीखना", "v1Desc": "नए विचारों के लिए खुले।", "v2Title": "तकनीक आधार है", "v2Desc": "एआई का उपयोग।", "v3Title": "जुनून", "v3Desc": "रचनात्मक सोच।",
+    "statsTitle": "आंकड़े", "s1Title": "भाषाएं", "s1Desc": "30 से अधिक भाषाएं।", "s2Title": "उपयोगकर्ता", "s2Desc": "लाखों उपयोगकर्ताओं की मदद।", "s3Title": "देश", "s3Desc": "190 देशों में सक्रिय।", "s4Title": "पार्टनर्स", "s4Desc": "सैकड़ों प्लेटफॉर्म।"
+  },
+  "VIPPromo": { "title": "वीआईपी क्लब", "subtitle": "विशेष छूट।" }
+}

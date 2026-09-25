@@ -1,25 +1,27 @@
 const fs = require('fs');
-const path = require('path');
+let file = 'components/layout/Footer.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-const footerPath = path.join(__dirname, 'components/layout/Footer.tsx');
-let code = fs.readFileSync(footerPath, 'utf8');
-
-code = code.replace(
-  "import { Plane, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';",
-  "import { Plane, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';\nimport { useTranslations } from 'next-intl';\nimport { Link } from '@/i18n/routing';"
+content = content.replace(
+  "<li><Link href=\"#\" className=\"hover:text-blue-400 transition\">{t('flightsNewYork')}</Link></li>",
+  "<li><Link href=\"/flights/new-york\" className=\"hover:text-blue-400 transition\">{t('flightsNewYork')}</Link></li>"
 );
-code = code.replace("import Link from 'next/link';\n", "");
-
-code = code.replace(
-  "export default function Footer() {",
-  "export default function Footer() {\n  const t = useTranslations('Footer');"
+content = content.replace(
+  "<li><Link href=\"#\" className=\"hover:text-blue-400 transition\">{t('flightsLondon')}</Link></li>",
+  "<li><Link href=\"/flights/london\" className=\"hover:text-blue-400 transition\">{t('flightsLondon')}</Link></li>"
+);
+content = content.replace(
+  "<li><Link href=\"#\" className=\"hover:text-blue-400 transition\">{t('flightsDubai')}</Link></li>",
+  "<li><Link href=\"/flights/dubai\" className=\"hover:text-blue-400 transition\">{t('flightsDubai')}</Link></li>"
+);
+content = content.replace(
+  "<li><Link href=\"#\" className=\"hover:text-blue-400 transition\">{t('flightsTokyo')}</Link></li>",
+  "<li><Link href=\"/flights/tokyo\" className=\"hover:text-blue-400 transition\">{t('flightsTokyo')}</Link></li>"
+);
+content = content.replace(
+  "<li><Link href=\"#\" className=\"hover:text-blue-400 transition\">{t('flightsParis')}</Link></li>",
+  "<li><Link href=\"/flights/paris\" className=\"hover:text-blue-400 transition\">{t('flightsParis')}</Link></li>"
 );
 
-code = code.replace(/>About Us<\/h3>/, ">{t('aboutUs')}</h3>");
-code = code.replace(/>Contact<\/h3>/, ">{t('contact')}</h3>");
-code = code.replace(/>Privacy Policy<\/Link>/, ">{t('privacyPolicy')}</Link>");
-code = code.replace(/>Terms of Service<\/Link>/, ">{t('termsOfService')}</Link>");
-code = code.replace(/© 2026 FlightChap. All rights reserved./, "© 2026 FlightChap. {t('allRightsReserved')}");
-
-fs.writeFileSync(footerPath, code);
-console.log('Footer updated');
+fs.writeFileSync(file, content, 'utf8');
+console.log('Updated Footer Links');

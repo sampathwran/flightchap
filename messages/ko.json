@@ -1,1 +1,71 @@
-{"Navbar":{"home":"홈","support":"지원","myBookings":"내 예약","signIn":"로그인","aboutUs":"소개","contactUs":"문의하기"},"HeroSearch":{"whereTo":"어디로?","searchFlights":"항공권 검색","roundTrip":"왕복","oneWay":"편도","multiCity":"다구간","economy":"일반석","premiumEconomy":"프리미엄","business":"비즈니스","firstClass":"일등석","passengers":"승객","adults":"성인","adultsDesc":"12세 이상","children":"소아","childrenDesc":"2-11세","infants":"유아","infantsDesc":"2세 미만","from":"출발지","to":"도착지","depart":"가는 날","return":"오는 날","search":"검색","tabFlights":"항공권","tabRentals":"렌터카","tabTransfers":"이동","tabEsim":"e-SIM"},"Destinations":{"title":"인기 여행지","subtitle":"탐색해보세요","subtitleExtended":"놀라운 특가.","tabCountries":"국가","tabCities":"도시","bestTime":"시기:","startingFrom":"최저가:","explore":"탐색"},"FlashDeals":{"title":"플래시 특가","subtitle":"혜택을 잡으세요!","viewAll":"모든 특가 보기","viewAllMobile":"모두 보기","bookNow":"예약하기","expired":"만료됨","endingSoon":"곧 종료","checkDeal":"특가 확인","noDeals":"특가 없음"},"BlogPreview":{"title":"여행 팁","subtitle":"최신 기사.","viewAll":"모든 기사","readMore":"더 읽기"},"FaqSection":{"title":"자주 묻는 질문","subtitle":"질문","description":"답해 드립니다.","q1":"저렴한 항공권?","a1":"실시간 비교.","q2":"숨겨진 수수료?","a2":"아니요.","q3":"취소?","a3":"항공사 정책.","q4":"플래시 특가?","a4":"큰 할인."},"Footer":{"aboutUs":"소개","contact":"연락처","privacyPolicy":"개인정보","termsOfService":"이용약관","allRightsReserved":"모든 권리 보유.","description":"여행 동반자.","topDestinations":"여행지","flightsNewYork":"뉴욕행","flightsLondon":"런던행","flightsDubai":"두바이행","flightsTokyo":"도쿄행","flightsParis":"파리행","company":"회사","helpCenter":"도움말","contactUs":"문의하기","cookiePolicy":"쿠키 정책","subscribeTitle":"특가 알림!","subscribeDesc":"전용 가격.","placeholderEmail":"이메일","btnSubscribe":"구독"},"Support":{"heroTitle":"도와드릴까요?","heroSubtitle":"검색.","searchPlaceholder":"검색...","categoriesTitle":"찾아보기","catBookings":"예약","catBookingsDesc":"예약 관리.","catCancellations":"취소","catCancellationsDesc":"수정 방법.","catBaggage":"수하물","catBaggageDesc":"허용량.","catAccount":"계정","catAccountDesc":"프로필 관리.","catTechnical":"기술 지원","catTechnicalDesc":"문제 해결.","catEsim":"e-SIM","catEsimDesc":"설정.","contactTitle":"도움 필요?","contactSubtitle":"24시간 대기.","btnChat":"채팅","btnCall":"전화하기","btnEmail":"이메일","faqTitle":"자주 묻는 질문","faq1Q":"환불 소요?","faq1A":"5-10일.","faq2Q":"양도?","faq2A":"안 됨.","faq3Q":"e-SIM 활성화?","faq3A":"QR 코드."},"MemberDeals":{"vipClub":"VIP 클럽","title":"회원 할인","subtitle":"프리미엄 혜택.","btnUnlock":"열기","btnSignIn":"로그인","signUpToUnlock":"가입"},"Profile":{"title":"내 계정","tabProfile":"설정","tabSaved":"저장된 특가","tabAlerts":"알림","tabPromos":"프로모션 코드","logout":"로그아웃","savedTitle":"저장된 특가","savedSubtitle":"나중을 위해.","alertsTitle":"가격 하락","alertsSubtitle":"알려드립니다.","promosTitle":"프로모션 코드","promosSubtitle":"사용하세요.","btnCopy":"복사"},"About":{"title":"가장 완벽한 검색.","subtitle":"검색 엔진.","missionTitle":"우리의 미션","p1":"혜택을 모읍니다.","p2":"비교를 단순화.","p3":"AI 활용.","whyChooseUs":"왜 선택?","w1Title":"가격","w1Desc":"비교.","w2Title":"투명성","w2Desc":"숨겨진 수수료 없음.","w3Title":"AI 기반","w3Desc":"스마트 알고리즘.","valuesTitle":"가치","v1Title":"항상 배웁니다","v1Desc":"준비.","v2Title":"기술","v2Desc":"문제 해결.","v3Title":"도전 정신","v3Desc":"도전.","statsTitle":"숫자로 보기","s1Title":"지원 언어","s1Desc":"30개 언어.","s2Title":"사용자","s2Desc":"수백만 명.","s3Title":"국가","s3Desc":"190개국.","s4Title":"파트너 사이트","s4Desc":"수백 개 플랫폼."},"VIPPromo":{"title":"VIP","subtitle":"프리미엄 여행."}}
+{
+  "Navbar": { "home": "홈", "support": "지원", "myBookings": "내 예약", "signIn": "로그인", "aboutUs": "소개", "contactUs": "문의" },
+  "HeroSearch": {
+    "whereTo": "어디로 가시나요?", "searchFlights": "항공권 검색", "roundTrip": "왕복", "oneWay": "편도", "multiCity": "다구간",
+    "economy": "이코노미", "premiumEconomy": "프리미엄 이코노미", "business": "비즈니스", "firstClass": "퍼스트 클래스", "passengers": "승객",
+    "from": "출발", "to": "도착", "depart": "출발일", "return": "도착일", "adults": "성인", "children": "소아", "infants": "유아",
+    "tabFlights": "항공권", "tabFlightsTitle": "다음 여행을 찾아보세요", "tabFlightsSubtitle": "저렴한 항공권을 비교하세요.",
+    "tabRental": "렌터카", "tabRentalTitle": "여행을 위한 차량", "tabRentalSubtitle": "최적의 가격으로 렌트하세요.",
+    "tabTransfers": "픽업", "tabTransfersTitle": "공항까지 스트레스 없이", "tabTransfersSubtitle": "신뢰할 수 있는 택시를 예약하세요.",
+    "tabEsim": "e-SIM", "tabEsimTitle": "어디서나 연결", "tabEsimSubtitle": "e-SIM으로 즉시 인터넷.",
+    "labelFrom": "출발", "labelTo": "도착", "labelDates": "날짜", "labelPassengers": "승객", "labelVehicle": "차량",
+    "labelPickUp": "픽업", "labelDropOff": "반납", "labelDateTime": "날짜 및 시간", "labelDestination": "목적지", "labelDuration": "기간", "labelDataPackage": "데이터 패키지",
+    "placeholderCityAirport": "도시 또는 공항", "placeholderDepartReturn": "출발 - 도착", "placeholderCityAddress": "도시, 공항 또는 주소",
+    "placeholderPickUpDropOff": "픽업 - 반납", "placeholderAirportHotel": "공항 또는 호텔", "placeholderHotelAddress": "호텔 또는 주소",
+    "placeholderPickUpTime": "픽업 시간", "placeholderWhereTo": "어디로 여행하시나요?",
+    "btnSearchFlights": "항공권 검색", "btnFindVehicles": "차량 검색", "btnSearchTransfers": "픽업 검색", "btnFindEsims": "e-SIM 검색",
+    "opt1AdultEconomy": "성인 1, 이코노미", "optAnyVehicle": "모든 차량", "optEconomyCar": "경차", "optSUV": "SUV", "optMotorbike": "오토바이",
+    "opt2Passengers": "2 명", "opt7Days": "7 일", "opt15Days": "15 일", "opt30Days": "30 일", "opt3GB": "3 GB", "opt5GB": "5 GB", "opt10GB": "10 GB", "optUnlimited": "무제한"
+  },
+  "RecentViews": { "recentSearches": "최근 검색", "viewAgain": "다시 보기", "title": "최근 검색한 내용" },
+  "TopDestinations": {
+    "title": "인기 여행지", "subtitle": "인기 장소를 탐색하세요", "flightsFrom": "항공권 최저가", "subtitleExtended": "세계를 탐험하세요.",
+    "tabCountries": "국가", "tabCities": "도시", "reviews": "리뷰", "showLess": "[ 닫기 ]", "readMore": "[ 더 보기... ]",
+    "bestTime": "최적의 시기:", "startingFrom": "시작", "perNight": "/ 1박", "findFlights": "항공권 찾기", "topAttractions": "주요 명소"
+  },
+  "FlashDeals": {
+    "title": "⚡ 플래시 세일", "subtitle": "이 혜택을 잡으세요!", "viewAll": "모두 보기 →", "viewAllMobile": "모두 보기",
+    "bookNow": "지금 예약", "expired": "만료됨", "endingSoon": "곧 종료", "checkDeal": "특가 확인", "noDeals": "특가가 없습니다."
+  },
+  "BlogPreview": { "title": "여행 팁", "subtitle": "최신 기사.", "viewAll": "모두 보기 →", "readMore": "더 보기" },
+  "FaqSection": {
+    "title": "자주 묻는 질문", "subtitle": "일반 질문", "description": "질문이 있나요? 답변해 드립니다.",
+    "q1": "저렴한 항공권을 찾는 방법은?", "a1": "실시간으로 가격을 비교합니다.",
+    "q2": "숨겨진 수수료가 있나요?", "a2": "아니요, 완전 무료입니다.",
+    "q3": "항공권을 변경할 수 있나요?", "a3": "항공사에 따라 다릅니다.",
+    "q4": "플래시 세일이란?", "a4": "단기간의 할인 항공권."
+  },
+  "Footer": {
+    "aboutUs": "소개", "contact": "연락처", "privacyPolicy": "개인정보보호", "termsOfService": "이용약관", "allRightsReserved": "모든 권리 보유.",
+    "description": "여행의 동반자.", "topDestinations": "목적지",
+    "flightsNewYork": "뉴욕 항공권", "flightsLondon": "런던 항공권", "flightsDubai": "두바이 항공권", "flightsTokyo": "도쿄 항공권", "flightsParis": "파리 항공권",
+    "company": "회사", "helpCenter": "고객센터", "contactUs": "문의", "cookiePolicy": "쿠키 정책",
+    "subscribeTitle": "시크릿 특가 구독!", "subscribeDesc": "회원 전용 특별가.", "placeholderEmail": "이메일", "btnSubscribe": "구독"
+  },
+  "Support": {
+    "heroTitle": "무엇을 도와드릴까요?", "heroSubtitle": "주제를 검색하거나 찾아보세요.", "searchPlaceholder": "기사 검색...",
+    "categoriesTitle": "주제별 찾아보기", "catBookings": "예약 및 결제", "catBookingsDesc": "예약 관리.", "catCancellations": "취소", "catCancellationsDesc": "변경 방법.",
+    "catBaggage": "수하물", "catBaggageDesc": "수하물 규정.", "catAccount": "계정", "catAccountDesc": "프로필 관리.", "catTechnical": "기술 지원", "catTechnicalDesc": "사이트 문제.",
+    "catEsim": "e-SIM 지원", "catEsimDesc": "설정 가이드.", "contactTitle": "도움이 필요한가요?", "contactSubtitle": "24/7 지원.",
+    "btnChat": "채팅", "btnCall": "전화", "btnEmail": "이메일", "faqTitle": "자주 묻는 질문",
+    "faq1Q": "환불은 얼마나 걸리나요?", "faq1A": "5-10 영업일.", "faq2Q": "티켓 양도가 가능한가요?", "faq2A": "일반적으로 불가.",
+    "faq3Q": "e-SIM 활성화 방법은?", "faq3A": "QR 코드 스캔."
+  },
+  "MemberDeals": {
+    "vipClub": "회원 전용", "title": "단독 혜택", "subtitle": "비밀 가격.",
+    "btnUnlock": "혜택 열기", "btnSignIn": "로그인", "signUpToUnlock": "가입"
+  },
+  "Profile": {
+    "title": "내 계정", "tabProfile": "설정", "tabSaved": "저장됨", "tabAlerts": "알림", "tabPromos": "프로모션 코드", "logout": "로그아웃",
+    "savedTitle": "저장된 특가", "savedSubtitle": "나중에 보기 위해.", "alertsTitle": "가격 알림", "alertsSubtitle": "가격이 내려가면 알림.",
+    "promosTitle": "할인 코드", "promosSubtitle": "이 코드를 사용하세요.", "btnCopy": "복사"
+  },
+  "About": {
+    "title": "당신의 첫 번째 선택.", "subtitle": "신뢰할 수 있는 검색 엔진.", "missionTitle": "우리의 미션",
+    "p1": "숨겨진 수수료 없이 비교.", "p2": "기술로 단순화합니다.", "p3": "AI를 활용합니다.",
+    "whyChooseUs": "왜 우리인가?", "w1Title": "최적의 가격", "w1Desc": "수백 개의 사이트 비교.", "w2Title": "100% 투명성", "w2Desc": "숨겨진 수수료 없음.", "w3Title": "AI 기술", "w3Desc": "스마트한 알고리즘.",
+    "valuesTitle": "우리의 가치", "v1Title": "항상 배웁니다", "v1Desc": "새로운 아이디어에 열려 있습니다.", "v2Title": "기술 기반", "v2Desc": "AI 사용.", "v3Title": "열정", "v3Desc": "창의적인 생각.",
+    "statsTitle": "통계", "s1Title": "언어", "s1Desc": "30개 이상의 언어.", "s2Title": "사용자", "s2Desc": "수백만 명의 사용자.", "s3Title": "국가", "s3Desc": "190개국 활성.", "s4Title": "파트너", "s4Desc": "수백 개의 플랫폼."
+  },
+  "VIPPromo": { "title": "VIP 클럽", "subtitle": "회원 전용 할인." }
+}

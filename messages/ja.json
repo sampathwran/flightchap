@@ -1,1 +1,71 @@
-{"Navbar":{"home":"ホーム","support":"サポート","myBookings":"予約","signIn":"ログイン","aboutUs":"会社概要","contactUs":"お問い合わせ"},"HeroSearch":{"whereTo":"どこへ？","searchFlights":"フライト検索","roundTrip":"往復","oneWay":"片道","multiCity":"複数都市","economy":"エコノミー","premiumEconomy":"プレミアムエコノミー","business":"ビジネス","firstClass":"ファースト","passengers":"乗客","adults":"大人","adultsDesc":"12歳以上","children":"子供","childrenDesc":"2-11歳","infants":"幼児","infantsDesc":"2歳未満","from":"出発地","to":"目的地","depart":"出発","return":"復路","search":"検索","tabFlights":"フライト","tabRentals":"レンタカー","tabTransfers":"送迎","tabEsim":"e-SIM"},"Destinations":{"title":"人気の目的地","subtitle":"探索","subtitleExtended":"お得な情報。","tabCountries":"国","tabCities":"都市","bestTime":"時期:","startingFrom":"最低価格:","explore":"探索"},"FlashDeals":{"title":"フラッシュセール","subtitle":"限定セール！","viewAll":"すべて見る","viewAllMobile":"すべて見る","bookNow":"今すぐ予約","expired":"期限切れ","endingSoon":"まもなく終了","checkDeal":"セールを確認","noDeals":"セールなし"},"BlogPreview":{"title":"最新の旅行","subtitle":"最新の記事。","viewAll":"すべての記事","readMore":"続きを読む"},"FaqSection":{"title":"よくある質問","subtitle":"一般的な質問","description":"答えがあります。","q1":"安いフライト？","a1":"リアルタイムで比較。","q2":"隠れた料金？","a2":"いいえ。","q3":"キャンセル？","a3":"航空会社による。","q4":"フラッシュセール？","a4":"大幅割引。"},"Footer":{"aboutUs":"会社概要","contact":"お問い合わせ","privacyPolicy":"プライバシー","termsOfService":"利用規約","allRightsReserved":"全著作権所有。","description":"旅行のお供。","topDestinations":"目的地","flightsNewYork":"ニューヨークへ","flightsLondon":"ロンドンへ","flightsDubai":"ドバイへ","flightsTokyo":"東京へ","flightsParis":"パリへ","company":"企業","helpCenter":"ヘルプ","contactUs":"お問い合わせ","cookiePolicy":"Cookie","subscribeTitle":"セールをアンロック！","subscribeDesc":"限定価格。","placeholderEmail":"メールアドレス","btnSubscribe":"購読する"},"Support":{"heroTitle":"お手伝いしますか？","heroSubtitle":"検索。","searchPlaceholder":"検索...","categoriesTitle":"閲覧","catBookings":"予約と支払い","catBookingsDesc":"予約を管理。","catCancellations":"キャンセル","catCancellationsDesc":"変更方法。","catBaggage":"手荷物","catBaggageDesc":"許容量。","catAccount":"アカウント","catAccountDesc":"プロフィール。","catTechnical":"サポート","catTechnicalDesc":"トラブル。","catEsim":"e-SIM","catEsimDesc":"ガイド。","contactTitle":"助けが必要？","contactSubtitle":"24時間サポート。","btnChat":"チャット","btnCall":"お電話","btnEmail":"メール","faqTitle":"よくある質問","faq1Q":"返金時間？","faq1A":"5-10日。","faq2Q":"チケット譲渡？","faq2A":"いいえ。","faq3Q":"e-SIM有効化？","faq3A":"QRコード。"},"MemberDeals":{"vipClub":"VIPクラブ","title":"限定割引","subtitle":"プレミアムセール。","btnUnlock":"アンロック","btnSignIn":"ログイン","signUpToUnlock":"サインアップ"},"Profile":{"title":"マイアカウント","tabProfile":"設定","tabSaved":"保存されたセール","tabAlerts":"料金アラート","tabPromos":"プロモコード","logout":"ログアウト","savedTitle":"保存されたセール","savedSubtitle":"ブックマーク。","alertsTitle":"値下げアラート","alertsSubtitle":"お知らせ。","promosTitle":"プロモコード","promosSubtitle":"使用。","btnCopy":"コピー"},"About":{"title":"完璧な旅行。","subtitle":"究極の検索。","missionTitle":"使命","p1":"セールを集約。","p2":"比較を簡素化。","p3":"AIを活用。","whyChooseUs":"なぜ選ばれる？","w1Title":"無敵の価格","w1Desc":"比較。","w2Title":"100％透明","w2Desc":"隠れた料金なし。","w3Title":"AI駆動","w3Desc":"スマート。","valuesTitle":"価値観","v1Title":"学ぶ","v1Desc":"好奇心。","v2Title":"テクノロジー","v2Desc":"問題を解決。","v3Title":"情熱","v3Desc":"挑戦。","statsTitle":"数字","s1Title":"ローカライズ","s1Desc":"30以上の言語。","s2Title":"ユーザー","s2Desc":"何百万人。","s3Title":"国","s3Desc":"190か国。","s4Title":"パートナー","s4Desc":"数百のプラットフォーム。"},"VIPPromo":{"title":"VIP","subtitle":"限定割引。"}}
+{
+  "Navbar": { "home": "ホーム", "support": "サポート", "myBookings": "予約確認", "signIn": "ログイン", "aboutUs": "会社概要", "contactUs": "お問い合わせ" },
+  "HeroSearch": {
+    "whereTo": "どこへ行きますか？", "searchFlights": "フライト検索", "roundTrip": "往復", "oneWay": "片道", "multiCity": "複数都市",
+    "economy": "エコノミー", "premiumEconomy": "プレミアムエコノミー", "business": "ビジネス", "firstClass": "ファーストクラス", "passengers": "乗客",
+    "from": "出発地", "to": "目的地", "depart": "出発", "return": "到着", "adults": "大人", "children": "子供", "infants": "幼児",
+    "tabFlights": "フライト", "tabFlightsTitle": "次の旅行を見つける", "tabFlightsSubtitle": "格安フライトを比較。",
+    "tabRental": "レンタカー", "tabRentalTitle": "旅行のための車両", "tabRentalSubtitle": "ベストプライスでレンタカー。",
+    "tabTransfers": "送迎", "tabTransfersTitle": "空港までストレスなし", "tabTransfersSubtitle": "信頼できるタクシーを予約。",
+    "tabEsim": "e-SIM", "tabEsimTitle": "どこでもつながる", "tabEsimSubtitle": "e-SIMで即インターネット。",
+    "labelFrom": "出発地", "labelTo": "目的地", "labelDates": "日付", "labelPassengers": "乗客", "labelVehicle": "車両",
+    "labelPickUp": "ピックアップ", "labelDropOff": "ドロップオフ", "labelDateTime": "日時", "labelDestination": "目的地", "labelDuration": "期間", "labelDataPackage": "データパッケージ",
+    "placeholderCityAirport": "都市または空港", "placeholderDepartReturn": "出発 - 到着", "placeholderCityAddress": "都市、空港、または住所",
+    "placeholderPickUpDropOff": "ピックアップ - ドロップオフ", "placeholderAirportHotel": "空港またはホテル", "placeholderHotelAddress": "ホテルまたは住所",
+    "placeholderPickUpTime": "ピックアップ時間", "placeholderWhereTo": "どこに旅行しますか？",
+    "btnSearchFlights": "フライトを検索", "btnFindVehicles": "車両を検索", "btnSearchTransfers": "送迎を検索", "btnFindEsims": "e-SIMを検索",
+    "opt1AdultEconomy": "1 大人, エコノミー", "optAnyVehicle": "すべての車両", "optEconomyCar": "エコノミーカー", "optSUV": "SUV", "optMotorbike": "バイク",
+    "opt2Passengers": "2 人", "opt7Days": "7 日", "opt15Days": "15 日", "opt30Days": "30 日", "opt3GB": "3 GB", "opt5GB": "5 GB", "opt10GB": "10 GB", "optUnlimited": "無制限"
+  },
+  "RecentViews": { "recentSearches": "最近の検索", "viewAgain": "もう一度見る", "title": "最近の検索内容" },
+  "TopDestinations": {
+    "title": "人気の目的地", "subtitle": "人気の場所を探索", "flightsFrom": "フライト開始価格", "subtitleExtended": "世界を探索。",
+    "tabCountries": "国", "tabCities": "都市", "reviews": "レビュー", "showLess": "[ 閉じる ]", "readMore": "[ 続きを読む... ]",
+    "bestTime": "ベストシーズン:", "startingFrom": "開始", "perNight": "/ 1泊", "findFlights": "フライト検索", "topAttractions": "観光スポット"
+  },
+  "FlashDeals": {
+    "title": "⚡ フラッシュセール", "subtitle": "お得なセールをゲット！", "viewAll": "すべて見る →", "viewAllMobile": "すべて見る",
+    "bookNow": "今すぐ予約", "expired": "期限切れ", "endingSoon": "まもなく終了", "checkDeal": "セールを見る", "noDeals": "セールはありません。"
+  },
+  "BlogPreview": { "title": "旅行のヒント", "subtitle": "最新の記事。", "viewAll": "すべて見る →", "readMore": "続きを読む" },
+  "FaqSection": {
+    "title": "よくある質問", "subtitle": "一般的な質問", "description": "質問がありますか？ 答えがあります。",
+    "q1": "格安フライトの見つけ方は？", "a1": "リアルタイムで価格を比較します。",
+    "q2": "隠し手数料はありますか？", "a2": "いいえ、無料です。",
+    "q3": "フライトは変更できますか？", "a3": "航空会社によります。",
+    "q4": "フラッシュセールとは？", "a4": "期間限定の割引フライト。"
+  },
+  "Footer": {
+    "aboutUs": "会社概要", "contact": "お問い合わせ", "privacyPolicy": "プライバシー", "termsOfService": "利用規約", "allRightsReserved": "全著作権所有。",
+    "description": "あなたの旅行のお供に。", "topDestinations": "目的地",
+    "flightsNewYork": "ニューヨーク行き", "flightsLondon": "ロンドン行き", "flightsDubai": "ドバイ行き", "flightsTokyo": "東京行き", "flightsParis": "パリ行き",
+    "company": "会社", "helpCenter": "ヘルプセンター", "contactUs": "お問い合わせ", "cookiePolicy": "Cookieポリシー",
+    "subscribeTitle": "シークレットセールを購読！", "subscribeDesc": "特別価格をメールで。", "placeholderEmail": "メールアドレス", "btnSubscribe": "購読する"
+  },
+  "Support": {
+    "heroTitle": "どうしましたか？", "heroSubtitle": "トピックを検索・閲覧。", "searchPlaceholder": "記事を検索...",
+    "categoriesTitle": "トピック別", "catBookings": "予約と支払い", "catBookingsDesc": "予約の管理。", "catCancellations": "キャンセル", "catCancellationsDesc": "変更方法。",
+    "catBaggage": "手荷物", "catBaggageDesc": "手荷物制限。", "catAccount": "アカウント", "catAccountDesc": "プロフィール管理。", "catTechnical": "技術サポート", "catTechnicalDesc": "サイトの問題。",
+    "catEsim": "e-SIMサポート", "catEsimDesc": "設定ガイド。", "contactTitle": "サポートが必要ですか？", "contactSubtitle": "24時間対応。",
+    "btnChat": "チャット", "btnCall": "電話", "btnEmail": "メール", "faqTitle": "よくある質問",
+    "faq1Q": "返金にはどのくらいかかりますか？", "faq1A": "5-10営業日。", "faq2Q": "チケットの譲渡は？", "faq2A": "通常はできません。",
+    "faq3Q": "e-SIMの有効化は？", "faq3A": "QRコードをスキャン。"
+  },
+  "MemberDeals": {
+    "vipClub": "メンバー限定", "title": "限定オファー", "subtitle": "秘密の価格。",
+    "btnUnlock": "ロック解除", "btnSignIn": "ログイン", "signUpToUnlock": "登録"
+  },
+  "Profile": {
+    "title": "マイアカウント", "tabProfile": "設定", "tabSaved": "保存済み", "tabAlerts": "通知", "tabPromos": "プロモコード", "logout": "ログアウト",
+    "savedTitle": "保存したセール", "savedSubtitle": "後で見るため。", "alertsTitle": "価格アラート", "alertsSubtitle": "価格が下がったら通知。",
+    "promosTitle": "割引コード", "promosSubtitle": "割引に使用。", "btnCopy": "コピー"
+  },
+  "About": {
+    "title": "あなたの最初の選択。", "subtitle": "信頼の検索エンジン。", "missionTitle": "私たちの使命",
+    "p1": "隠し手数料なしで比較。", "p2": "テクノロジーで簡単に。", "p3": "AIを活用。",
+    "whyChooseUs": "選ばれる理由", "w1Title": "ベストプライス", "w1Desc": "数百のサイトを比較。", "w2Title": "100% 透明性", "w2Desc": "隠し手数料なし。", "w3Title": "AI テクノロジー", "w3Desc": "スマートなアルゴリズム。",
+    "valuesTitle": "私たちの価値観", "v1Title": "常に学ぶ", "v1Desc": "新しいアイデアを受け入れる。", "v2Title": "テクノロジー基盤", "v2Desc": "AIの活用。", "v3Title": "情熱", "v3Desc": "枠にとらわれない思考。",
+    "statsTitle": "統計", "s1Title": "言語", "s1Desc": "30以上の言語。", "s2Title": "ユーザー", "s2Desc": "数百万人のユーザー。", "s3Title": "国", "s3Desc": "190カ国でアクティブ。", "s4Title": "パートナー", "s4Desc": "何百ものプラットフォーム。"
+  },
+  "VIPPromo": { "title": "VIPクラブ", "subtitle": "限定割引。" }
+}
