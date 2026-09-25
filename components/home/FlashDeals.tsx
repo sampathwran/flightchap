@@ -1,6 +1,6 @@
 ﻿'use client';
 import { useEffect, useState, useRef } from 'react';
-import { Clock, Plane, Car, Wifi, MoveRight, Heart } from 'lucide-react';
+import { Clock, Plane, Car, Wifi, MoveRight, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, where, getDocs, doc, setDoc, deleteDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
@@ -138,9 +138,25 @@ export default function FlashDeals() {
            <div className="flex justify-center gap-4 mb-8">
              {[1,2,3,4,5].map(i => <div key={i} className="h-10 w-24 bg-slate-200 rounded-full animate-pulse"></div>)}
            </div>
-           <div ref={sliderRef} className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
-             {[1,2,3,4].map(i => <div key={i} className="w-[85vw] sm:w-[45vw] lg:w-auto shrink-0 h-72 bg-slate-100 rounded-xl animate-pulse"></div>)}
+           <div className="relative group">
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div ref={sliderRef} className="flex flex-row overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+             {[1,2,3,4].map(i => <div key={i} className="w-[100%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] shrink-0 h-72 bg-slate-100 rounded-xl animate-pulse"></div>)}
            </div>
+        </div>
         </div>
       </section>
     );
@@ -190,7 +206,22 @@ export default function FlashDeals() {
           ))}
         </div>
 
-        <div className="flex flex-row overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+        <div className="relative group">
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          
+          <button 
+            onClick={() => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-slate-100 rounded-full p-2 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition opacity-0 group-hover:opacity-100 hidden md:block"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div ref={sliderRef} className="flex flex-row overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
           {filteredDeals.length > 0 ? filteredDeals.map((deal) => {
              const isExpired = deal.endTime < new Date();
              
@@ -261,6 +292,7 @@ export default function FlashDeals() {
           )}
         </div>
         
+        </div>
         {filteredDeals.length > 0 && (
           <div className="mt-8 text-center sm:hidden">
             <Link href="/deals" className="inline-block border border-blue-600 text-blue-600 font-semibold px-6 py-2 rounded-full hover:bg-blue-50 transition">
