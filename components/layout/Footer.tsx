@@ -41,14 +41,11 @@ export default function Footer() {
         source: 'newsletter'
       }, { merge: true });
 
-      // 2. Add to mail collection to trigger automated email
-      await addDoc(collection(db, 'mail'), {
-        to: email,
-        from: 'FlightChap <info@flightchap.com>',
-        message: {
-          subject: 'Thank you for subscribing to FlightChap!',
-          html: '<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;"><h2>Welcome to FlightChap! ??</h2><p>You have successfully subscribed to our exclusive fare alerts and travel newsletter.</p><p>We will make sure you are the first to know about secret flight deals and premium offers.</p><br/><p>Best Regards,<br/>The FlightChap Team</p></div>'
-        }
+      // 2. Send email via our Next.js API route
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
 
       setSuccess(true);
